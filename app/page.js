@@ -50,15 +50,15 @@ const Home = () => {
     const header_link = document.querySelector(
       ".header_link___CESc:last-child"
     );
-    closeBtn.addEventListener("click", function () {
-      SayHalloPage.style.display = "none";
-    });
-    header_link.addEventListener("click", function () {
-      SayHalloPage.style.display = "block";
-    });
-    getFreeEstimate.addEventListener("click", function () {
-      SayHalloPage.style.display = "block";
-    });
+    // closeBtn.addEventListener("click", function () {
+    //   SayHalloPage.style.display = "none";
+    // });
+    // header_link.addEventListener("click", function () {
+    //   SayHalloPage.style.display = "block";
+    // });
+    // getFreeEstimate.addEventListener("click", function () {
+    //   SayHalloPage.style.display = "block";
+    // });
     footerLink.addEventListener("click", function () {
       SayHalloPage.style.display = "block";
     });
