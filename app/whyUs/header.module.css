@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.header {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
+  position: fixed;
+  top: 20px;
+  left: 0;
+  font-family: "Urbanist", sans-serif;
+  z-index: 2;
+}
+.header .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.625rem, 0.5612864078rem + 0.2912621359vw, 1rem);
+}
+.header .left .logo {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  aspect-ratio: 1/1;
+  padding: clamp(1rem, 0.657960199rem + 0.9950248756vw, 2.25rem);
+  border-radius: clamp(1.25rem, 0.8224502488rem + 1.2437810945vw, 2.8125rem);
+  min-width: 3rem;
+  min-height: 3rem;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease 0s;
+}
+.header .left .logo:hover {
+  background-color: black;
+}
+.header .left .logo:hover svg path {
+  background-color: black;
+  fill: white;
+}
+.header .left .logo svg path {
+  fill: black;
+}
+.header .left .logo svg {
+  height: clamp(1rem, 0.7982402913rem + 0.9223300971vw, 2.1875rem);
+  width: clamp(1rem, 0.7982402913rem + 0.9223300971vw, 2.1875rem);
+}
+.header .left .link {
+  font-size: clamp(1rem, 0.9150485437rem + 0.3883495146vw, 1.5rem);
+  border-radius: clamp(1.25rem, 0.984526699rem + 1.213592233vw, 2.8125rem);
+  padding: clamp(1rem, 0.657960199rem + 0.9950248756vw, 2.25rem)
+    clamp(1.5rem, 1.2770024272rem + 1.0194174757vw, 2.8125rem);
+  font-weight: 600;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  transition: all 0.3s ease 0s;
+  backdrop-filter: blur(5px);
+  font-size: clamp(1rem, 0.9150485437rem + 0.3883495146vw, 1.5rem);
+}
+.header .left .link:nth-child(4) {
+  background-color: black;
+  color: white;
+}
+.header .left .link:hover {
+  background-color: black;
+  color: white;
+}
+.header .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .right .btn {
+  font-size: clamp(1rem, 0.9150485437rem + 0.3883495146vw, 1.5rem);
+  border-radius: clamp(1.25rem, 0.984526699rem + 1.213592233vw, 2.8125rem);
+  padding: clamp(1rem, 0.657960199rem + 0.9950248756vw, 2.25rem)
+    clamp(1.5rem, 1.2770024272rem + 1.0194174757vw, 2.8125rem);
+  font-weight: 600;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  font-size: clamp(1rem, 0.9150485437rem + 0.3883495146vw, 1.5rem);
+  border: 1px solid #000;
+}
+.header .right .btn:hover {
+  background-color: black;
+  color: white;
+}
+.header .right .icon_menu {
+  width: 40px;
+  height: 15px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+}
+.header .right .icon_menu span {
+  position: relative;
+  height: 3px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50px;
+}
+/* --- */
+@media (max-width: 800px) {
+  .header .left .link,
+  .header .right .btn {
+    display: none;
+  }
+  .header .right .icon_menu {
+    display: flex;
+  }
+}

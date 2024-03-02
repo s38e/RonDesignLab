@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.header {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
+  position: fixed;
+  top: 20px;
+  left: 0;
+  font-family: "Urbanist", sans-serif;
+  z-index: 2;
+}
+.header .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.625rem, 0.5612864078rem + 0.2912621359vw, 1rem);
+}
+.header .left .logo {
+  background-color: #191919;
+  aspect-ratio: 1/1;
+  padding: clamp(1rem, 0.657960199rem + 0.9950248756vw, 2.25rem);
+  border-radius: clamp(1.25rem, 0.8224502488rem + 1.2437810945vw, 2.8125rem);
+  min-width: 3rem;
+  min-height: 3rem;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease 0s;
+}
+.header .left .logo:hover {
+  background-color: black;
+}
+.header .left .logo svg path {
+  fill: white;
+}
+.header .left .logo svg {
+  height: clamp(1rem, 0.7982402913rem + 0.9223300971vw, 2.1875rem);
+  width: clamp(1rem, 0.7982402913rem + 0.9223300971vw, 2.1875rem);
+}
+.header .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .right .btn {
+  padding: clamp(1rem, 0.657960199rem + 0.9950248756vw, 2.25rem);
+  border-radius: clamp(1.25rem, 0.8224502488rem + 1.2437810945vw, 2.8125rem);
+  position: relative;
+  min-width: 3rem;
+  min-height: 3rem;
+  display: inline-flex;
+  transition: all 0.3s ease 0s;
+  background-color: #fff;
+  justify-content: center;
+  overflow: hidden;
+}
+.header .right .btn svg {
+  height: clamp(1rem, 0.7982402913rem + 0.9223300971vw, 2.1875rem);
+  width: clamp(1rem, 0.7982402913rem + 0.9223300971vw, 2.1875rem);
+  fill: #000;
+}
+.header .right .btn:hover {
+  background-color: black;
+}
+.header .right .btn:hover svg {
+  fill: white;
+}
