@@ -255,10 +255,10 @@ function Cases() {
               app.
             </h2>
             <p class="text">
-              It wouldn't have been possible without your &amp; team's efforts.
-              What distinguishes the design in the app is - simplicity &amp;
-              clarity reflecting the app about our business which helped us
-              raise the vast capital.
+              It wouldn&apos;t have been possible without your &amp; team&apos;s
+              efforts. What distinguishes the design in the app is - simplicity
+              &amp; clarity reflecting the app about our business which helped
+              us raise the vast capital.
             </p>
             <p class="text">
               Also, to add to the design comment - even after being a new
