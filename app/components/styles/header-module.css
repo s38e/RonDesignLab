@@ -10,7 +10,7 @@
   top: 20px;
   left: 0;
   font-family: "Urbanist", sans-serif;
-  z-index: 2;
+  z-index: 3;
 }
 .header .left {
   display: flex;
@@ -118,12 +118,12 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   transform: translateX(100%);
   transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   backdrop-filter: blur(20px);
   color: white;
-  transition-delay: 2s;
+  transition-delay: 1.8s;
 }
 .menu.active {
   transition-delay: 0s;
@@ -163,7 +163,7 @@
 }
 .menu .container .links .link p {
   transform: translateY(100%);
-  transition: 1s 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: 1s 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   opacity: 0;
   transition-delay: 1s;
 }

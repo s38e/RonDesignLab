@@ -540,6 +540,57 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <div className={styles.body_responsive}>
+            <div className={styles.item_responsive}>
+              <div className={styles.image}>
+                <Image className={styles.img} alt="Img" src={fighting_1} />
+              </div>
+              <h1 className={styles.work_heading}>Team Extension</h1>
+              <p className={styles.work_title}>
+                <span>Hire a cohesive team.</span> A team that is integrated
+                into your process and
+                <span> offers practical solutions</span> aligned with your
+                priorities and goals.
+              </p>
+              <div className={styles.work_hashtags}>
+                <div className={styles.work_hashtag}>Staff Augmentation</div>
+                <div className={styles.work_hashtag}>Consulting</div>
+                <div className={styles.work_hashtag}>Outstaff</div>
+              </div>
+            </div>
+            <div className={styles.item_responsive}>
+              <div className={styles.image}>
+                <Image className={styles.img} alt="Img" src={fighting_2} />
+              </div>
+              <h1 className={styles.work_heading}>UX Architect & CX Design</h1>
+              <p className={styles.work_title}>
+                Besides complex architectural solutions, you get a personalized
+                approach to
+                <span> enhance user experience</span>, helping you achieve
+                business goals of the brand.
+              </p>
+              <div className={styles.work_hashtags}>
+                <div className={styles.work_hashtag}>Discovery</div>
+                <div className={styles.work_hashtag}>Analysis</div>
+                <div className={styles.work_hashtag}>Research</div>
+              </div>
+            </div>
+            <div className={styles.item_responsive}>
+              <div className={styles.image}>
+                <Image className={styles.img} alt="Img" src={fighting_3} />
+              </div>
+              <h1 className={styles.work_heading}>UI & Visual Design</h1>
+              <p className={styles.work_title}>
+                Get <span>world-class graphic and interface design </span>
+                that effectively conveys your brand&apos;s message.
+              </p>
+              <div className={styles.work_hashtags}>
+                <div className={styles.work_hashtag}>Mobile Application</div>
+                <div className={styles.work_hashtag}>Websites</div>
+                <div className={styles.work_hashtag}>Branding</div>
+              </div>
+            </div>
+          </div>
         </section>
         <section className={styles.section_3}>
           <div className={styles.body}>
@@ -808,6 +859,72 @@ const Home = () => {
               <div className={styles.section_6_work_photo_item}>
                 <Image src={section_6_3} alt="" className={styles.img} />
               </div>
+            </div>
+          </div>
+          <div className={styles.body_section_6_responsive}>
+            <div className={styles.item_responsive}>
+              <div className={styles.image}>
+                <Image className={styles.img} alt="Img" src={section_6_1} />
+              </div>
+              <h1 className={styles.section_6_work_heading}>Brief</h1>
+              <p className={styles.section_6_work_title}>
+                You will <span>get to know our team</span> while we dive into
+                project details for effective communication
+              </p>
+              <ul className={styles.section_6_work_hashtags}>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Our questionnaire</p>
+                </li>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Introductory call</p>
+                </li>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Project documentation</p>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.item_responsive}>
+              <div className={styles.image}>
+                <Image className={styles.img} alt="Img" src={section_6_2} />
+              </div>
+              <h1 className={styles.section_6_work_heading}>Proposal</h1>
+              <p className={styles.section_6_work_title}>
+                You&apos;ll receive a detailed proposal with
+                <span> project goals and timeline</span> to foster mutual
+                understanding
+              </p>
+              <ul className={styles.section_6_work_hashtags}>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Budget</p>
+                </li>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Team size</p>
+                </li>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Timeline</p>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.item_responsive}>
+              <div className={styles.image}>
+                <Image className={styles.img} alt="Img" src={section_6_3} />{" "}
+              </div>
+              <h1 className={styles.section_6_work_heading}>Contract</h1>
+              <p className={styles.section_6_work_title}>
+                We <span>coordinate all necessary documentation</span> from both
+                sides before the project starts for seamless collaboration
+              </p>
+              <ul className={styles.section_6_work_hashtags}>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Invoice and contract issuance</p>
+                </li>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Making deposit</p>
+                </li>
+                <li className={styles.section_6_work_hashtag}>
+                  <p className={styles.text}>Start project</p>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
