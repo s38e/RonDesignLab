@@ -20,7 +20,7 @@ function SayHallo() {
       <HeaderSayHallo />
       <main className="bodySayHalloPage">
         <div className="container">
-          <div className="header">
+          <div className="headerSayHallo">
             <h3 className="head_text">
               First things first...please share your professional contact
               details*

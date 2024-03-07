@@ -30,19 +30,19 @@
   gap: 48px;
   width: 43.5%;
 }
-.bodySayHalloPage .container .header {
+.bodySayHalloPage .container .headerSayHallo {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 10px;
 }
-.bodySayHalloPage .container .header .head_text {
+.bodySayHalloPage .container .headerSayHallo .head_text {
   font-size: 24px;
   line-height: 32px;
   font-weight: unset;
   color: #b8b8b8;
 }
-.bodySayHalloPage .container .header .title {
+.bodySayHalloPage .container .headerSayHallo .title {
   font-weight: unset;
   font-size: 20px;
   line-height: 28px;
