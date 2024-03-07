@@ -2,7 +2,7 @@
 import React from "react";
 import HeaderAbout from "./header";
 import Footer from "@/app/components/footer";
-import styles from "./about.module.css";
+import "./about-module.css";
 import Image from "next/image";
 import samsung from "@/public/assets/samsung.svg";
 import huawei from "@/public/assets/huawei.svg";
@@ -71,11 +71,11 @@ const About = () => {
       SayHalloPage.style.display = "block";
     });
     // ----------- Animation Scale Photo ----------- //
-    gsap.to(".about_scale_photo__j0KD4", {
+    gsap.to(".office__image", {
       scale: "1.1",
       duration: 1,
       scrollTrigger: {
-        trigger: ".about_scale_photo__j0KD4",
+        trigger: ".office__image",
         start: "top center",
         end: "+=500",
         scrub: 1,
@@ -96,7 +96,7 @@ const About = () => {
     });
     // ----------- Head Section_2 Animation ----------- //
     gsap.fromTo(
-      ".about_home__title__OsHuN",
+      ".home__title",
       {
         opacity: 0,
         y: -40,
@@ -109,7 +109,7 @@ const About = () => {
         scale: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: ".about_home__title__OsHuN",
+          trigger: ".home__title",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -118,7 +118,7 @@ const About = () => {
     );
     // ----------- Head Section_5 Animation ----------- //
     gsap.fromTo(
-      ".about_headerSection_5__AQx6j",
+      ".headerSection_5",
       {
         opacity: 0,
         y: -40,
@@ -131,7 +131,7 @@ const About = () => {
         scale: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: ".about_headerSection_5__AQx6j",
+          trigger: ".headerSection_5",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -140,7 +140,7 @@ const About = () => {
     );
     // ----------- Head Section_6 Animation ----------- //
     gsap.fromTo(
-      ".about_head__HSRmw",
+      ".section_6 .bodySection_6 .things__wrapper .things__motion .title",
       {
         opacity: 0,
         y: -40,
@@ -153,7 +153,30 @@ const About = () => {
         scale: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: ".about_head__HSRmw",
+          trigger:
+            ".section_6 .bodySection_6 .things__wrapper .things__motion .title",
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+    // ----------- Head Section_7 Animation ----------- //
+    gsap.fromTo(
+      ".section_7 .headerSection_7",
+      {
+        opacity: 0,
+        y: -40,
+        scale: 1.1,
+        z: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".section_7 .headerSection_7",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -162,16 +185,16 @@ const About = () => {
     );
     // ----------- Card_1 Section_2 Animation ----------- //
     gsap.fromTo(
-      ".about_home__item__JdXAA:nth-child(1)",
+      ".section_2 .home__body .home__list .home__item:nth-child(1)",
       {
-        x: -500,
+        x: "-50%",
         z: 0,
       },
       {
         x: 0,
         duration: 1,
         scrollTrigger: {
-          trigger: ".about_home__list__F_1ex",
+          trigger: ".section_2 .home__body .home__list",
           start: "top 100%",
           end: "bottom 100%",
           toggleActions: "play none none none",
@@ -181,16 +204,16 @@ const About = () => {
     );
     // ----------- Card_2 Section_2 Animation ----------- //
     gsap.fromTo(
-      ".about_home__item__JdXAA:nth-child(2)",
+      ".section_2 .home__body .home__list .home__item:nth-child(2)",
       {
-        x: 500,
+        x: "50%",
         z: 0,
       },
       {
         x: 0,
         duration: 1,
         scrollTrigger: {
-          trigger: ".about_home__list__F_1ex",
+          trigger: ".section_2 .home__body .home__list",
           start: "top 100%",
           end: "bottom 100%",
           toggleActions: "play none none none",
@@ -199,18 +222,28 @@ const About = () => {
       }
     );
     // ----------- Animation Trans Human ----------- //
-    const moveDistance =
-      (document.querySelector(".about_body__U9bOq").clientHeight * 30) / 100;
-    gsap.to(".about_human__P641q", {
-      y: moveDistance,
-      scrollTrigger: {
-        start: "top 30%",
-        end: "bottom 30%",
-        trigger: ".about_body__U9bOq",
-        // markers: true,
-        scrub: 1,
-      },
-    });
+    function checkScreenSize() {
+      if (window.innerWidth >= 768) {
+        const moveDistance =
+          (document.querySelector(".body").clientHeight * 30) / 100;
+        gsap.to(".human", {
+          y: moveDistance,
+          scrollTrigger: {
+            start: "top 30%",
+            end: "bottom 30%",
+            trigger: ".body",
+            // markers: true,
+            scrub: 1,
+          },
+        });
+      } else {
+        gsap.set(".human", { y: 0 });
+        ScrollTrigger.getAll(".human").forEach((trigger) => trigger.kill());
+      }
+    }
+
+    window.addEventListener("load", checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
     // ----------- applySplitTypeAnimation -----------
     const applySplitTypeAnimation = (elements) => {
       elements.forEach((element) => {
@@ -239,12 +272,9 @@ const About = () => {
         );
       });
     };
-    const aboutHeadingElements = document.querySelectorAll(
-      "#about_heading_section_1__RYCuE"
-    );
-    const partnersTextElements = document.querySelectorAll(
-      ".about_partners__text__cPBh5"
-    );
+    const aboutHeadingElements =
+      document.querySelectorAll("#heading_section_1");
+    const partnersTextElements = document.querySelectorAll(".partners__text");
 
     if (aboutHeadingElements.length > 0) {
       applySplitTypeAnimation(aboutHeadingElements);
@@ -254,40 +284,35 @@ const About = () => {
       applySplitTypeAnimation(partnersTextElements);
     }
     // ----------- Animation Pin Image Section_4 ----------- //
-    let workInfoItemsSection_4 = document.querySelectorAll(
-      ".about_work_photo_item__q24TS"
-    );
+    let workInfoItemsSection_4 = document.querySelectorAll(".work_photo_item");
     workInfoItemsSection_4.forEach(function (item, index) {
       item.style.zIndex = workInfoItemsSection_4.length - index;
     });
-    gsap.set(".about_work_photo_item__q24TS", {
+    gsap.set(".work_photo_item", {
       clipPath: function () {
         return "inset(0px 0px 0px 0px)";
       },
     });
-    const animationSection_4 = gsap.to(
-      ".about_work_photo_item__q24TS:not(:last-child)",
-      {
-        clipPath: function () {
-          return "inset(0px 0px 100% 0px)";
-        },
-        stagger: 0.5,
-        ease: "none",
-      }
-    );
+    const animationSection_4 = gsap.to(".work_photo_item:not(:last-child)", {
+      clipPath: function () {
+        return "inset(0px 0px 100% 0px)";
+      },
+      stagger: 0.5,
+      ease: "none",
+    });
     ScrollTrigger.create({
-      trigger: ".about_body_section_4__KiOWT",
+      trigger: ".body_section_4",
       start: "top top",
       end: "bottom bottom",
       animation: animationSection_4,
       scrub: 1,
     });
     // ----------- moments__images -----------
-    gsap.to(`.${styles.moments__images}`, {
+    gsap.to(".moments__images", {
       x: -1200,
       z: 0,
       scrollTrigger: {
-        trigger: `.${styles.moments__images}`,
+        trigger: ".moments__images",
         start: "top 85%",
         end: "bottom 0%",
         scrub: 1,
@@ -298,16 +323,16 @@ const About = () => {
   return (
     <>
       <HeaderAbout />
-      <main className={styles.page}>
-        <section className={styles.hero_section}>
-          <div className={styles.heading}>
+      <main className="page">
+        <section className="hero_section">
+          <div className="heading">
             <h1>
-              <div className={styles.top}>
+              <div className="top">
                 The first
-                <div className={styles.img_bar}>
-                  <div className={styles.div_img}>
+                <div className="img_bar">
+                  <div className="div_img">
                     <Image
-                      className={styles.img}
+                      className="img"
                       src={section_3_images}
                       alt="Description of the image"
                       style={{
@@ -316,112 +341,108 @@ const About = () => {
                       }}
                     />
                   </div>
-                  <div className={styles.background}></div>
+                  <div className="background"></div>
                 </div>
                 impression
               </div>
               that matters
             </h1>
           </div>
-          <div className={styles.scale_photo}>
-            <Image
-              src={aboutPageHero}
-              alt="Hero Photo"
-              className={styles.img}
-            />
-            <div className={styles.about_us__label}>
+          <div className="scale_photo">
+            <Image src={aboutPageHero} alt="Hero Photo" className="img" />
+            <div className="about_us__label">
               May this be our least <br /> awkward one yet! ☺️.
             </div>
           </div>
         </section>
-        <section className={styles.section_1}>
+        <section className="section_1">
           <h1
-            className={styles.heading}
-            id={styles.heading_section_1}
+            className="heading"
+            id="heading_section_1"
             data-bg-color="#cccccc"
             data-fg-color="#000"
           >
             Since 2015, our solutions have been trusted by
           </h1>
-          <div className={styles.partners__list}>
-            <div className={styles.partners__item}>
-              <div className={styles.partners__image_big}>
-                <Image src={samsung} className={styles.img} alt="" />
+          <div className="partners__list">
+            <div className="partners__item">
+              <div className="partners__image_big">
+                <Image src={samsung} className="img" alt="" />
               </div>
               <p
-                className={styles.partners__text}
+                className="partners__text"
                 data-bg-color="#cccccc"
                 data-fg-color="#000"
               >
                 Samsung,
               </p>
             </div>
-            <div className={styles.partners__item}>
-              <div className={styles.partners__image}>
-                <Image src={huawei} className={styles.img} alt="" />
+            <div className="partners__item">
+              <div className="partners__image">
+                <Image src={huawei} className="img" alt="" />
               </div>
               <p
-                className={styles.partners__text}
+                className="partners__text"
                 data-bg-color="#cccccc"
                 data-fg-color="#000"
               >
                 Huawei,
               </p>
             </div>
-            <div className={styles.partners__item}>
-              <div className={styles.partners__image_big}>
-                <Image src={kohler} className={styles.img} alt="" />
+            <div className="partners__item">
+              <div className="partners__image_big">
+                <Image src={kohler} className="img" alt="" />
               </div>
               <p
-                className={styles.partners__text}
+                className="partners__text"
                 data-bg-color="#cccccc"
                 data-fg-color="#000"
               >
                 Kohler,
               </p>
             </div>
-            <div className={styles.partners__item}>
-              <div className={styles.partners__image}>
-                <Image src={vessel} className={styles.img} alt="" />
+            <div className="partners__item">
+              <div className="partners__image">
+                <Image src={vessel} className="img" alt="" />
               </div>
               <p
-                className={styles.partners__text}
+                className="partners__text"
                 data-bg-color="#cccccc"
                 data-fg-color="#000"
               >
                 Vessel,
               </p>
             </div>
-            <div className={styles.partners__item}>
-              <div className={styles.partners__image}>
-                <Image src={colgate} className={styles.img} alt="" />
+            <div className="partners__item">
+              <div className="partners__image">
+                <Image src={colgate} className="img" alt="" />
               </div>
               <p
-                className={styles.partners__text}
+                className="partners__text"
                 data-bg-color="#cccccc"
                 data-fg-color="#000"
               >
                 Colgate,
               </p>
             </div>
-            <div className={styles.partners__item}>
-              <div className={styles.partners__image}>
-                <Image src={fox} className={styles.img} alt="" />
+            <div className="partners__item">
+              <div className="partners__image">
+                <Image src={fox} className="img" alt="" />
               </div>
               <p
-                className={styles.partners__text}
+                className="partners__text"
                 data-bg-color="#cccccc"
                 data-fg-color="#000"
               >
                 Fox Sports,
               </p>
             </div>
-            <div className={styles.partners__item}>
-              <div className={styles.partners__image_big}>
-                <Image src={ford} className={styles.img} alt="" />
+            <div className="partners__item">
+              <div className="partners__image_big">
+                <Image src={ford} className="img" alt="" />
               </div>
               <p
-                className={styles.partners__text}
+                className="partners__text"
                 data-bg-color="#cccccc"
                 data-fg-color="#000"
               >
@@ -430,98 +451,88 @@ const About = () => {
             </div>
           </div>
         </section>
-        <section className={styles.section_2}>
-          <h2 className={styles.home__title}>
+        <section className="section_2">
+          <h2 className="home__title">
             Your challenges, <br /> our expertise <br /> in solving them
           </h2>
-          <div className={styles.home__body}>
-            <ul className={styles.home__list}>
-              <li className={styles.home__item}>
-                <div className={styles.challenges__left}>
-                  <h3 className={styles.challenges__title}>
+          <div className="home__body">
+            <ul className="home__list">
+              <li className="home__item">
+                <div className="challenges__left">
+                  <h3 className="challenges__title">
                     Launching new <br /> products <br /> for enterprises
                   </h3>
-                  <p className={styles.challenges__text}>
+                  <p className="challenges__text">
                     For the last 2 years we saved over
                     <span> $11.000.000</span> for our enterprise customers.
                   </p>
                 </div>
-                <div className={styles.challenges__right}>
-                  <p className={styles.challenges__value}>$5M+</p>
-                  <div className={styles.challenges__content}>
-                    <div className={styles.challenges__info}>
-                      <div className={styles.challenges__image}>
-                        <Image
-                          alt="Kohler logo"
-                          src={kohler}
-                          className={styles.img}
-                        />
+                <div className="challenges__right">
+                  <p className="challenges__value">$5M+</p>
+                  <div className="challenges__content">
+                    <div className="challenges__info">
+                      <div className="challenges__image">
+                        <Image alt="Kohler logo" src={kohler} className="img" />
                       </div>
-                      <p className={styles.challenges__company}>
+                      <p className="challenges__company">
                         Acquisition of Kohler
                       </p>
                     </div>
-                    <p className={styles.challenges__strategy}>
+                    <p className="challenges__strategy">
                       Creating a new mobile app with an existing team in the
                       company
                     </p>
                   </div>
                 </div>
               </li>
-              <li className={styles.home__item}>
-                <div className={styles.challenges__left}>
-                  <div className={styles.challenges__title}>
+              <li className="home__item">
+                <div className="challenges__left">
+                  <div className="challenges__title">
                     <h3>
                       We make money <br /> for startups.
                     </h3>
-                    <div className={styles.challenges__wrapper}>
+                    <div className="challenges__wrapper">
                       <h3>Series A </h3>
                       <Image
                         alt="Arrow right"
-                        className={styles.challenges__arrow}
+                        className="challenges__arrow"
                         src={ArrowRight}
                       />
                       <h3> Series B</h3>
                     </div>
                   </div>
-                  <p className={styles.challenges__text}>
+                  <p className="challenges__text">
                     Last 3 years over <span> $120.000.000</span> <br />
                     clients’ investment.
                   </p>
                 </div>
-                <div className={styles.challenges__right}>
-                  <p className={styles.challenges__value}>$22M+</p>
-                  <div className={styles.challenges__content}>
-                    <div className={styles.challenges__info}>
-                      <div className={styles.challenges__image}>
-                        <Image
-                          alt="Vessel logo"
-                          className={styles.img}
-                          src={vessel}
-                        />
+                <div className="challenges__right">
+                  <p className="challenges__value">$22M+</p>
+                  <div className="challenges__content">
+                    <div className="challenges__info">
+                      <div className="challenges__image">
+                        <Image alt="Vessel logo" className="img" src={vessel} />
                       </div>
-                      <p className={styles.challenges__company}>
+                      <p className="challenges__company">
                         Acquisition of Vessel
                       </p>
                     </div>
-                    <p className={styles.challenges__strategy}>
-                      Rebranding 360
-                    </p>
+                    <p className="challenges__strategy">Rebranding 360</p>
                   </div>
                 </div>
               </li>
             </ul>
           </div>
         </section>
-        <section className={styles.section_3}>
-          <p className={styles.quote}>“</p>
-          <div className={styles.body}>
-            <div className={styles.content}>
-              <p className={styles.text}>
+        <section className="section_3">
+          <p className="quote">“</p>
+          <div className="body">
+            <div className="content">
+              <p className="text">
                 Rondesignlabs employs <span> top-level </span> designers from
                 around the world. I was very impressed with their concepts.
               </p>
-              <p className={styles.text}>
+              <p className="text">
                 They were also
                 <span>
                   <span> </span>
@@ -530,40 +541,40 @@ const About = () => {
                 </span>
                 and high standard for design.
               </p>
-              <div className={styles.clutch}>
-                <div className={styles.left}>
-                  <div className={styles.image}>
+              <div className="clutch">
+                <div className="left">
+                  <div className="image">
                     <Image
                       alt="Clutch logo"
-                      className={styles.img}
+                      className="img"
                       src={clutch_logo}
                     />
                   </div>
-                  <div className={styles.grade}>
-                    <p className={styles.value}>5</p>
-                    <ul className={styles.stars}>
-                      <li className={styles.star}>
-                        <Image alt="Star" className={styles.img} src={Star} />
+                  <div className="grade">
+                    <p className="value">5</p>
+                    <ul className="stars">
+                      <li className="star">
+                        <Image alt="Star" className="img" src={Star} />
                       </li>
-                      <li className={styles.star}>
-                        <Image alt="Star" className={styles.img} src={Star} />
+                      <li className="star">
+                        <Image alt="Star" className="img" src={Star} />
                       </li>
-                      <li className={styles.star}>
-                        <Image alt="Star" className={styles.img} src={Star} />
+                      <li className="star">
+                        <Image alt="Star" className="img" src={Star} />
                       </li>
-                      <li className={styles.star}>
-                        <Image alt="Star" className={styles.img} src={Star} />
+                      <li className="star">
+                        <Image alt="Star" className="img" src={Star} />
                       </li>
-                      <li className={styles.star}>
-                        <Image alt="Star" className={styles.img} src={Star} />
+                      <li className="star">
+                        <Image alt="Star" className="img" src={Star} />
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className={styles.right}>
+                <div className="right">
                   <button
                     target="_blank"
-                    className={styles.right__link}
+                    className="right__link"
                     href="https://clutch.co/profile/rondesignlab#reviews"
                   >
                     View all reviews
@@ -571,151 +582,125 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.human}>
-              <div className={styles.image}>
-                <Image
-                  alt="Ben Callaghan"
-                  src={benCallaghan}
-                  className={styles.img}
-                />
+            <div className="human">
+              <div className="image">
+                <Image alt="Ben Callaghan" src={benCallaghan} className="img" />
               </div>
-              <p className={styles.name}>
+              <p className="name">
                 <span>Ben Callaghan, </span> VP, <br /> Launch at Goodroot
               </p>
             </div>
           </div>
         </section>
-        <section className={styles.section_4}>
-          <div className={styles.heading}>
-            <h1 className={styles.head}>
+        <section className="section_4">
+          <div className="heading">
+            <h1 className="head">
               What are we
               <br />
               fighting against?
             </h1>
-            <p className={styles.title}>
-              Users do not use my design or project
-            </p>
+            <p className="title">Users do not use my design or project</p>
           </div>
-          <div className={styles.body_section_4}>
-            <div className={styles.work_photo}>
-              <div className={styles.work_photo_item}>
-                <Image src={aboutSection_4_01} alt="" className={styles.img} />
-                <div className={styles.desk}>
-                  <div className={styles.name}>Jack L.</div>
+          <div className="body_section_4">
+            <div className="work_photo">
+              <div className="work_photo_item">
+                <Image src={aboutSection_4_01} alt="" className="img" />
+                <div className="desk">
+                  <div className="name">Jack L.</div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://www.linkedin.com/in/jack-l-rondesignlab/"
                   >
-                    <Image
-                      alt="LinkedIn"
-                      className={styles.img}
-                      src={linkedinLogo}
-                    />
+                    <Image alt="LinkedIn" className="img" src={linkedinLogo} />
                   </a>
                 </div>
               </div>
-              <div className={styles.work_photo_item}>
-                <Image src={aboutSection_4_02} alt="" className={styles.img} />
-                <div className={styles.desk}>
-                  <div className={styles.name}>Mari S.</div>
+              <div className="work_photo_item">
+                <Image src={aboutSection_4_02} alt="" className="img" />
+                <div className="desk">
+                  <div className="name">Mari S.</div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://www.linkedin.com/in/managmentrondesign/"
                   >
-                    <Image
-                      alt="LinkedIn"
-                      className={styles.img}
-                      src={linkedinLogo}
-                    />
+                    <Image alt="LinkedIn" className="img" src={linkedinLogo} />
                   </a>
                 </div>
               </div>
-              <div className={styles.work_photo_item}>
-                <Image src={aboutSection_4_03} alt="" className={styles.img} />
-                <div className={styles.desk}>
-                  <div className={styles.name}>Stan D.</div>
+              <div className="work_photo_item">
+                <Image src={aboutSection_4_03} alt="" className="img" />
+                <div className="desk">
+                  <div className="name">Stan D.</div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://www.linkedin.com/in/stan-d/"
                   >
-                    <Image
-                      alt="LinkedIn"
-                      className={styles.img}
-                      src={linkedinLogo}
-                    />
+                    <Image alt="LinkedIn" className="img" src={linkedinLogo} />
                   </a>
                 </div>
               </div>
-              <div className={styles.work_photo_item}>
-                <Image src={aboutSection_4_04} alt="" className={styles.img} />
-                <div className={styles.desk}>
-                  <div className={styles.name}>Jack R.</div>
+              <div className="work_photo_item">
+                <Image src={aboutSection_4_04} alt="" className="img" />
+                <div className="desk">
+                  <div className="name">Jack R.</div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://www.linkedin.com/in/jack-r-rondesign/"
                   >
-                    <Image
-                      alt="LinkedIn"
-                      className={styles.img}
-                      src={linkedinLogo}
-                    />
+                    <Image alt="LinkedIn" className="img" src={linkedinLogo} />
                   </a>
                 </div>
               </div>
             </div>
-            <div className={styles.work_text}>
-              <div className={styles.work_info}>
-                <h1 className={styles.work_heading}>Chief executive officer</h1>
-                <p className={styles.work_title}>
+            <div className="work_text">
+              <div className="work_info">
+                <h1 className="work_heading">Chief executive officer</h1>
+                <p className="work_title">
                   He is responsible for
                   <span> developing and implementing successful projects,</span>
                   with his experience and leadership playing an invaluable role
                   in <span> achieving exceptional results</span>
                 </p>
-                <div className={styles.work_hashtags}>
-                  <div className={styles.work_hashtag}>✈️ Traveling</div>
-                  <div className={styles.work_hashtag}>👪 Family</div>
-                  <div className={styles.work_hashtag}>🍕 Delicious food</div>
+                <div className="work_hashtags">
+                  <div className="work_hashtag">✈️ Traveling</div>
+                  <div className="work_hashtag">👪 Family</div>
+                  <div className="work_hashtag">🍕 Delicious food</div>
                 </div>
               </div>
-              <div className={styles.work_info}>
-                <h1 className={styles.work_heading}>
-                  UX Architect & CX Design
-                </h1>
-                <p className={styles.work_title}>
+              <div className="work_info">
+                <h1 className="work_heading">UX Architect & CX Design</h1>
+                <p className="work_title">
                   Besides complex architectural solutions, you get a
                   personalized approach to<span> enhance user experience</span>,
                   helping you achieve business goals of the brand.
                 </p>
-                <div className={styles.work_hashtags}>
-                  <div className={styles.work_hashtag}>📷 Photography</div>
-                  <div className={styles.work_hashtag}>🐾 Pets</div>
-                  <div className={styles.work_hashtag}>🚗 Cars</div>
+                <div className="work_hashtags">
+                  <div className="work_hashtag">📷 Photography</div>
+                  <div className="work_hashtag">🐾 Pets</div>
+                  <div className="work_hashtag">🚗 Cars</div>
                 </div>
               </div>
-              <div className={styles.work_info}>
-                <h1 className={styles.work_heading}>
-                  Chief information officer
-                </h1>
-                <p className={styles.work_title}>
+              <div className="work_info">
+                <h1 className="work_heading">Chief information officer</h1>
+                <p className="work_title">
                   With exceptional skills in management, Stan
                   <span> ensures smooth project and process operations, </span>
                   providing solutions and guidance to resolve project-related
                   questions and issues.
                 </p>
-                <div className={styles.work_hashtags}>
-                  <div className={styles.work_hashtag}>📚 Books</div>
-                  <div className={styles.work_hashtag}>🎾 Tennis</div>
-                  <div className={styles.work_hashtag}>🏂 Snowboard</div>
+                <div className="work_hashtags">
+                  <div className="work_hashtag">📚 Books</div>
+                  <div className="work_hashtag">🎾 Tennis</div>
+                  <div className="work_hashtag">🏂 Snowboard</div>
                 </div>
               </div>
-              <div className={styles.work_info}>
-                <h1 className={styles.work_heading}>Co-Founder</h1>
-                <p className={styles.work_title}>
+              <div className="work_info">
+                <h1 className="work_heading">Co-Founder</h1>
+                <p className="work_title">
                   He is responsible for the
                   <span> company&apos;s strategic development. </span> He plays
                   a pivotal role in developing the company&apos;s
@@ -725,218 +710,230 @@ const About = () => {
                     visibility.
                   </span>
                 </p>
-                <div className={styles.work_hashtags}>
-                  <div className={styles.work_hashtag}>⛳ Golf</div>
-                  <div className={styles.work_hashtag}>🎣 Fishing</div>
-                  <div className={styles.work_hashtag}>💰 Investing</div>
+                <div className="work_hashtags">
+                  <div className="work_hashtag">⛳ Golf</div>
+                  <div className="work_hashtag">🎣 Fishing</div>
+                  <div className="work_hashtag">💰 Investing</div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section className={styles.section_5}>
-          <h2 className={styles.headerSection_5}>Meet our team</h2>
-          <div className={styles.bodySection_5}>
-            <div className={styles.team__image}>
-              <Image alt="World map" src={Map} className={styles.img} />
+          <div className="body_section_4_responsive">
+            <div className="item_responsive">
+              <div className="image">
+                <Image src={aboutSection_4_01} alt="" className="img" />
+                <div className="desk">
+                  <div className="name">Jack L.</div>
+                  <a
+                    target="_blank"
+                    className="link"
+                    href="https://www.linkedin.com/in/jack-l-rondesignlab/"
+                  >
+                    <Image alt="LinkedIn" className="img" src={linkedinLogo} />
+                  </a>
+                </div>
+              </div>
+              <h1 className="work_heading">Chief executive officer</h1>
+              <p className="work_title">
+                He is responsible for
+                <span> developing and implementing successful projects,</span>
+                with his experience and leadership playing an invaluable role in{" "}
+                <span> achieving exceptional results</span>
+              </p>
+              <div className="work_hashtags">
+                <div className="work_hashtag">✈️ Traveling</div>
+                <div className="work_hashtag">👪 Family</div>
+                <div className="work_hashtag">🍕 Delicious food</div>
+              </div>
             </div>
-            <div className={styles.team__decor}>
-              <div className={styles.team__wrapper}>
-                <Image alt="Decor Image" src={Decor} className={styles.img} />
-                <div className={styles.team__info}>
-                  <div className={styles.team__flag}>
-                    <Image alt="USA" src={USA} className={styles.img} />
+            <div className="item_responsive"></div>
+            <div className="item_responsive"></div>
+            <div className="item_responsive"></div>
+          </div>
+        </section>
+        <section className="section_5">
+          <h2 className="headerSection_5">Meet our team</h2>
+          <div className="bodySection_5">
+            <div className="team__image">
+              <Image alt="World map" src={Map} className="img" />
+            </div>
+            <div className="team__decor">
+              <div className="team__wrapper">
+                <Image alt="Decor Image" src={Decor} className="img" />
+                <div className="team__info">
+                  <div className="team__flag">
+                    <Image alt="USA" src={USA} className="img" />
                   </div>
-                  <p className={styles.team__country}>USA</p>
+                  <p className="team__country">USA</p>
                 </div>
               </div>
             </div>
-            <ul className={styles.team__list}>
-              <li className={styles.team__item}>
+            <ul className="team__list">
+              <li className="team__item">
                 Our team operates in more than<span> 9 countries</span> ✈️
               </li>
-              <li className={styles.team__item}>
+              <li className="team__item">
                 <span>8</span> time zones 🕙
               </li>
             </ul>
           </div>
         </section>
-        <section className={styles.section_6}>
-          <div className={styles.bodySection_6}>
-            <div className={styles.things__wrapper}>
-              <div className={styles.things__motion}>
-                <h2 className={styles.title}>
+        <section className="section_6">
+          <div className="bodySection_6">
+            <div className="things__wrapper">
+              <div className="things__motion">
+                <h2 className="title">
                   A few things <br /> about us
                 </h2>
               </div>
             </div>
           </div>
-          <ul className={styles.imagesSection_6}>
-            <li className={styles.things__item}>
-              <div className={styles.things__body}>
-                <h4 className={styles.things__title}>350+</h4>
-                <p className={styles.things__text}>Happy Clients</p>
+          <ul className="imagesSection_6">
+            <li className="things__item">
+              <div className="things__body">
+                <h4 className="things__title">350+</h4>
+                <p className="things__text">Happy Clients</p>
               </div>
             </li>
-            <li className={styles.things__item}>
-              <div className={styles.things__body}>
-                <Image alt="Clutch" className={styles.img} src={Clutch} />
-                <p className={styles.things__text}>
+            <li className="things__item">
+              <div className="things__body">
+                <Image alt="Clutch" className="img" src={Clutch} />
+                <p className="things__text">
                   <span>29</span> Clutch Reviews
                 </p>
               </div>
             </li>
-            <li className={styles.things__item}>
-              <div className={styles.things__body}>
-                <h4 className={styles.things__title}>8+</h4>
-                <p className={styles.things__text}> Years of Services</p>
+            <li className="things__item">
+              <div className="things__body">
+                <h4 className="things__title">8+</h4>
+                <p className="things__text"> Years of Services</p>
               </div>
             </li>
-            <li className={styles.things__item}>
-              <div className={styles.things__body}>
-                <Image alt="CSSDA" className={styles.img} src={CSSDA} />
-                <p className={styles.things__text}>
+            <li className="things__item">
+              <div className="things__body">
+                <Image alt="CSSDA" className="img" src={CSSDA} />
+                <p className="things__text">
                   <span>🏆 x5</span> Awards
                 </p>
               </div>
             </li>
-            <li className={styles.things__item}>
-              <div className={styles.things__body}>
-                <Image
-                  alt="CSS Winner"
-                  className={styles.img}
-                  src={cssWinner}
-                />
-                <p className={styles.things__text}>
+            <li className="things__item">
+              <div className="things__body">
+                <Image alt="CSS Winner" className="img" src={cssWinner} />
+                <p className="things__text">
                   <span>🏆 x1</span> Site of the Day
                 </p>
               </div>
             </li>
-            <li className={styles.things__item}>
-              <div className={styles.things__body}>
-                <Image
-                  alt="CSS Awards"
-                  className={styles.img}
-                  src={cssAwards}
-                />
-                <p className={styles.things__text}>
+            <li className="things__item">
+              <div className="things__body">
+                <Image alt="CSS Awards" className="img" src={cssAwards} />
+                <p className="things__text">
                   <span>🏆 x1</span> Site of the Day
                 </p>
               </div>
             </li>
-            <li className={styles.things__item}>
-              <div className={styles.things__body}>
-                <Image alt="Best CSS" className={styles.img} src={bestCSS} />
-                <p className={styles.things__text}>
+            <li className="things__item">
+              <div className="things__body">
+                <Image alt="Best CSS" className="img" src={bestCSS} />
+                <p className="things__text">
                   <span>🏆 x1</span> Site of the Day
                 </p>
               </div>
             </li>
           </ul>
         </section>
-        <section className={styles.section_7}>
-          <h3 className={styles.headerSection_7}>
+        <section className="section_7">
+          <h3 className="headerSection_7">
             Pleasant moments
             <br />
             together
           </h3>
-          <div className={styles.bodySection_7}>
-            <ul className={styles.moments__images}>
-              <li className={styles.moments__image}>
+          <div className="bodySection_7">
+            <ul className="moments__images">
+              <li className="moments__image">
                 <Image
                   alt="Working process 🤔"
-                  className={styles.img}
+                  className="img"
                   src={section_7_images_01}
                 />
-                <div className={styles.moments__label}>Working process 🤔</div>
+                <div className="moments__label">Working process 🤔</div>
               </li>
-              <li className={styles.moments__image}>
+              <li className="moments__image">
                 <Image
                   alt="Mountain hike ⛰️"
-                  className={styles.img}
+                  className="img"
                   src={section_7_images_02}
                 />
-                <div className={styles.moments__label}>Mountain hike ⛰️</div>
+                <div className="moments__label">Mountain hike ⛰️</div>
               </li>
-              <li className={styles.moments__image}>
+              <li className="moments__image">
                 <Image
                   alt="Kayaking 🚣‍♂️"
-                  className={styles.img}
+                  className="img"
                   src={section_7_images_03}
                 />
-                <div className={styles.moments__label}>Kayaking 🚣‍♂️</div>
+                <div className="moments__label">Kayaking 🚣‍♂️</div>
               </li>
-              <li className={styles.moments__image}>
+              <li className="moments__image">
                 <Image
                   alt="Barbecue ♨"
-                  className={styles.img}
+                  className="img"
                   src={section_7_images_04}
                 />
-                <div className={styles.moments__label}>Barbecue ♨</div>
+                <div className="moments__label">Barbecue ♨</div>
               </li>
-              <li className={styles.moments__image}>
+              <li className="moments__image">
                 <Image
                   alt="Camping 🏕️"
-                  className={styles.img}
+                  className="img"
                   src={section_7_images_05}
                 />
-                <div className={styles.moments__label}>Camping 🏕️</div>
+                <div className="moments__label">Camping 🏕️</div>
               </li>
             </ul>
           </div>
         </section>
-        <section className={styles.section_8}>
-          <h2 className={styles.office__header}>Our office</h2>
-          <div className={styles.office__wrapper}>
-            <div className={styles.office__image}>
-              <Image alt="Our Office" className={styles.img} src={Office} />
+        <section className="section_8">
+          <h2 className="office__header">Our office</h2>
+          <div className="office__wrapper">
+            <div className="office__image">
+              <Image alt="Our Office" className="img" src={Office} />
             </div>
-            <div className={styles.office__label}>
-              <div className={styles.office__icon}>
-                <Image
-                  alt="Place icon"
-                  className={styles.img}
-                  src={placeIcon}
-                />
+            <div className="office__label">
+              <div className="office__icon">
+                <Image alt="Place icon" className="img" src={placeIcon} />
               </div>
-              <div className={styles.office__content}>
-                <h6 className={styles.office__city}>Kraków, Poland</h6>
-                <p className={styles.office__address}>
-                  ul. Gęsia 8/205, 31-054
-                </p>
+              <div className="office__content">
+                <h6 className="office__city">Kraków, Poland</h6>
+                <p className="office__address">ul. Gęsia 8/205, 31-054</p>
               </div>
             </div>
           </div>
         </section>
-        <section className={styles.section_9}>
-          <div className={styles.talk__body}>
-            <div className={styles.talk__text}>Shall we chat?</div>
-            <Link
-              href="mailto:hello@rondesignlab.com"
-              className={styles.talk__link}
-            >
+        <section className="section_9">
+          <div className="talk__body">
+            <div className="talk__text">Shall we chat?</div>
+            <Link href="mailto:hello@rondesignlab.com" className="talk__link">
               hello@rondesignlab.com
             </Link>
           </div>
-          <div className={styles.talk__title}>
-            <div className={styles.talk__motion}>
+          <div className="talk__title">
+            <div className="talk__motion">
               Let’s
-              <div className={styles.talk__image}>
+              <div className="talk__image">
                 <div>
                   <Image
-                    className={styles.img}
+                    className="img"
                     alt="Let us show your strength"
                     src={yellow_girl_smile}
                   />
                 </div>
-                <div className={styles.talk__background}></div>
+                <div className="talk__background"></div>
               </div>
               <p>talk</p>
             </div>
-            <button
-              title="Open Typeform Say Hello"
-              className={styles.talk__button}
-            >
+            <button title="Open Typeform Say Hello" className="talk__button">
               <svg
                 width="32"
                 height="16"
