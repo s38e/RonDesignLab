@@ -31,12 +31,14 @@ gsap.registerPlugin(ScrollTrigger);
 function Pilot() {
   useEffect(() => {
     // ----------- Open Say Hallo Form ----------- //
-    const closeBtn = document.querySelector(".header_btn__Jtgac");
+    const closeBtn = document.querySelector(
+      ".header_header__sjyk8 .header_right__mGDpM .header_btn__Jtgac"
+    );
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
-    const getFreeEstimate = document.querySelector(".header_btn__fcImc");
+    const getFreeEstimate = document.querySelector(".header .right .btn");
     const header_link = document.querySelector(
-      ".header_link__Ed1m3:last-child"
+      ".header .left .link:last-child"
     );
     closeBtn.addEventListener("click", function () {
       SayHalloPage.style.display = "none";
@@ -961,14 +963,14 @@ function Pilot() {
                 <ul className={styles.section__list}>
                   <li className={styles.section__item}>
                     <h3 className={styles.section__subtitle}>SaaS Software</h3>
-                    <p className={styles.section__text}> Company type</p>
+                    <p className={styles.section__text}>Company type</p>
                   </li>
                   <li className={styles.section__item}>
-                    <h3 className={styles.section__subtitle}> Desktop</h3>
+                    <h3 className={styles.section__subtitle}>Desktop</h3>
                     <p className={styles.section__text}> Project type</p>
                   </li>
                   <li className={styles.section__item}>
-                    <h3 className={styles.section__subtitle}> Idea</h3>
+                    <h3 className={styles.section__subtitle}>Idea</h3>
                     <p className={styles.section__text}> Project stage</p>
                   </li>
                 </ul>

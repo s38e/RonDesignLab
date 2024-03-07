@@ -8,6 +8,7 @@ import share_image from "@/public/assets/share-image.webp";
 import Whatsapp from "@/public/assets/whatsapp.svg";
 import Twitter from "@/public/assets/twitter.svg";
 import Mail from "@/public/assets/mail.svg";
+import { Yuji_Syuku } from "next/font/google";
 
 const Footer = () => {
   useEffect(() => {
@@ -204,7 +205,6 @@ const Footer = () => {
               <br /> presentations
             </p>
           </div>
-
           <a
             href="/assets/RondesignlabPresentationGuide.pdf"
             download="Rondesignlab Presentation Guide.pdf"
@@ -230,40 +230,12 @@ const Footer = () => {
             </div>
           </a>
         </div>
-        <div className={styles.col}>
-          <h3 className={styles.head}>Social</h3>
-          <div className={styles.links}>
-            <Link
-              className={styles.link}
-              href="https://www.tiktok.com/@rondesignlab"
-            >
-              TikTok
-            </Link>
-            <Link
-              className={styles.link}
-              href="https://www.instagram.com/rondesignlab/"
-            >
-              Instagram
-            </Link>
-            <Link
-              className={styles.link}
-              href="https://dribbble.com/RonDesignLab"
-            >
-              Dribbble
-            </Link>
-            <Link
-              className={styles.link}
-              href="https://www.behance.net/rondesignlab"
-            >
-              Behance
-            </Link>
-          </div>
-        </div>
+
         <div className={styles.col}>
           <h3 className={styles.head}>Pages</h3>
           <div className={styles.links}>
             <Link className={styles.link} href="" id="SayHalloLink">
-              Say Hello 👋
+              Say Hello
             </Link>
             <Link className={styles.link} href="/pilot">
               Pilot
@@ -282,8 +254,10 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className={styles.col}>
-          <p className={styles.copyright}>© 2023, Rondesign</p>
+      </section>
+      <section className={styles.last_section}>
+        <p className={styles.copyright}>© 2023, Rondesign</p>
+        <div className={styles.links}>
           <Link className={styles.link} href="">
             Sitemap
           </Link>
@@ -296,6 +270,24 @@ const Footer = () => {
           <Link className={styles.link} href="">
             Cookie Policy
           </Link>
+        </div>
+        <div className={styles.Social}>
+          <Link
+            className={styles.link}
+            href="https://www.tiktok.com/@rondesignlab"
+          ></Link>
+          <Link
+            className={styles.link}
+            href="https://www.instagram.com/rondesignlab/"
+          ></Link>
+          <Link
+            className={styles.link}
+            href="https://dribbble.com/RonDesignLab"
+          ></Link>
+          <Link
+            className={styles.link}
+            href="https://www.behance.net/rondesignlab"
+          ></Link>
         </div>
       </section>
     </div>

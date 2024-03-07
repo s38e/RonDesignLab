@@ -392,6 +392,7 @@
   gap: clamp(0.375rem, 0.2900485437rem + 0.3883495146vw, 0.875rem);
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .section__wrapper .section__body .section__top {
   display: flex;
@@ -1287,4 +1288,99 @@
 }
 .section_7 .talk__title:hover .talk__button svg path {
   fill: white;
+}
+/* =============== Responsive Design =============== */
+/* =============== 991px =============== */
+@media (max-width: 991px) {
+  .section_1 .pilot__wrapper {
+    grid-template-areas:
+      "A B"
+      "C D"
+      "E E ";
+  }
+  .section_1 .pilot__wrapper .pilot__price .pilot__box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .section_1 .pilot__wrapper .pilot__box .sprints__footer .pilot__wrapper {
+    align-items: flex-start;
+  }
+}
+/* =============== 768px =============== */
+@media (max-width: 768px) {
+  .section_1 .pilot__wrapper .pilot__consulting .pilot__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section__header .section__content .section__info {
+    flex-direction: column;
+  }
+  .section__wrapper .section__body .section__top {
+    flex-direction: column;
+  }
+  .section__wrapper .section__body .section__top .section__left {
+    width: auto;
+    flex: 1 1 50%;
+  }
+  .section__wrapper .section__body .section__top .section__right {
+    aspect-ratio: 0.851582 / 1;
+    width: auto;
+    flex: 1 1 50%;
+  }
+}
+/* =============== 650px =============== */
+@media (max-width: 650px) {
+  .section_1 .pilot__wrapper {
+    grid-template-areas:
+      "A A"
+      "B B"
+      "C C"
+      "D D"
+      "E E";
+  }
+  .section_1 .pilot__wrapper .pilot__price .pilot__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+/* =============== 614px =============== */
+@media (max-width: 614px) {
+  .section__wrapper .section__body .section__info .section__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5625rem;
+    justify-content: flex-start;
+  }
+}
+/* =============== 600px =============== */
+@media (max-width: 600px) {
+  .section__wrapper
+    .section__body
+    .section__review
+    .section__body
+    .section__wrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .section__wrapper
+    .section__body
+    .section__review
+    .section__body
+    .section__wrapper
+    .section__content {
+    max-width: 100%;
+  }
+}
+/* =============== 480px =============== */
+@media (max-width: 480px) {
+  .section_1 .pilot__wrapper .pilot__price .pilot__box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .section_1 .pilot__wrapper .pilot__consulting .pilot__box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .section_1 .pilot__wrapper .pilot__box .sprints__footer .pilot__link {
+    width: 100%;
+  }
 }
