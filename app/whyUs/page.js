@@ -1,5 +1,5 @@
 "use client";
-import styles from "./whyUs.module.css";
+import "./whyUs-module.css";
 import React from "react";
 import HeaderWhyUs from "./header";
 import Image from "next/image";
@@ -46,10 +46,10 @@ function WhyUs() {
     // ----------- Open Say Hallo Form ----------- //
     const closeBtn = document.querySelector(".header_btn__Jtgac");
     const SayHalloPage = document.querySelector(".SayHalloPage");
-    const getFreeEstimate = document.querySelector(".header_btn__2Aib6");
+    const getFreeEstimate = document.querySelector(".header .right .btn");
     const footerLink = document.querySelector("#SayHalloLink");
     const header_link = document.querySelector(
-      ".header_link__dHPJT:last-child"
+      ".header .left .link:last-child"
     );
     closeBtn.addEventListener("click", function () {
       SayHalloPage.style.display = "none";
@@ -64,11 +64,11 @@ function WhyUs() {
       SayHalloPage.style.display = "block";
     });
     // ----------- Animation Scale Video ----------- //
-    gsap.to(".whyUs_video__G7Lqo", {
+    gsap.to(".hero_section .video", {
       scale: "1.1",
       duration: 1,
       scrollTrigger: {
-        trigger: ".whyUs_video__G7Lqo",
+        trigger: ".hero_section .video",
         start: "top center",
         end: "+=500",
         scrub: 1,
@@ -89,7 +89,7 @@ function WhyUs() {
     });
     // ----------- Head Section_1 Animation ----------- //
     gsap.fromTo(
-      ".whyUs_title_section_1__l6liu",
+      ".section_1 .header_section_1 .title_section_1",
       {
         opacity: 0,
         y: -40,
@@ -102,7 +102,7 @@ function WhyUs() {
         scale: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: ".whyUs_title_section_1__l6liu",
+          trigger: ".section_1 .header_section_1 .title_section_1",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -111,7 +111,7 @@ function WhyUs() {
     );
     // ----------- Head Section_2 Animation ----------- //
     gsap.fromTo(
-      ".whyUs_title_section_2__fEq8C",
+      ".section_2 .header_section_2 .title_section_2",
       {
         opacity: 0,
         y: -40,
@@ -124,7 +124,7 @@ function WhyUs() {
         scale: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: ".whyUs_title_section_2__fEq8C",
+          trigger: ".section_2 .header_section_2 .title_section_2",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -133,7 +133,7 @@ function WhyUs() {
     );
     // ----------- Head Section_3 Animation ----------- //
     gsap.fromTo(
-      ".whyUs_title_section_3__9EbxZ",
+      ".section_3 .header_section_3 .title_section_3",
       {
         opacity: 0,
         y: -40,
@@ -146,7 +146,7 @@ function WhyUs() {
         scale: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: ".whyUs_title_section_3__9EbxZ",
+          trigger: ".section_3 .header_section_3 .title_section_3",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -155,7 +155,7 @@ function WhyUs() {
     );
     // ----------- Head Section_4 Animation ----------- //
     gsap.fromTo(
-      ".whyUs_section_4_title__WIwYK",
+      ".section_4 .header_section_4 .section_4_title",
       {
         opacity: 0,
         y: -40,
@@ -168,7 +168,7 @@ function WhyUs() {
         scale: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: ".whyUs_section_4_title__WIwYK",
+          trigger: ".section_4 .header_section_4 .section_4_title",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -177,7 +177,7 @@ function WhyUs() {
     );
     // ----------- Head Section_5 Animation ----------- //
     gsap.fromTo(
-      ".whyUs_section_5_title__0YnID",
+      ".section_5 .header_section_5 .section_5_title",
       {
         opacity: 0,
         y: -40,
@@ -190,7 +190,7 @@ function WhyUs() {
         scale: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: ".whyUs_section_5_title__0YnID",
+          trigger: ".section_5 .header_section_5 .section_5_title",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -198,29 +198,24 @@ function WhyUs() {
       }
     );
     // ----------- Animation Pin Image ----------- //
-    let workInfoItems = document.querySelectorAll(
-      ".whyUs_section_4_work_photo_item__D8pJ8"
-    );
+    let workInfoItems = document.querySelectorAll(".section_4_work_photo_item");
     workInfoItems.forEach(function (item, index) {
       item.style.zIndex = workInfoItems.length - index;
     });
-    gsap.set(".whyUs_section_4_work_photo_item__D8pJ8", {
+    gsap.set(".section_4_work_photo_item", {
       clipPath: function () {
         return "inset(0px 0px 0px 0px)";
       },
     });
-    const animation = gsap.to(
-      ".whyUs_section_4_work_photo_item__D8pJ8:not(:last-child)",
-      {
-        clipPath: function () {
-          return "inset(0px 0px 100% 0px)";
-        },
-        stagger: 0.5,
-        ease: "none",
-      }
-    );
+    const animation = gsap.to(".section_4_work_photo_item:not(:last-child)", {
+      clipPath: function () {
+        return "inset(0px 0px 100% 0px)";
+      },
+      stagger: 0.5,
+      ease: "none",
+    });
     ScrollTrigger.create({
-      trigger: ".whyUs_body_section_4__SMRZO",
+      trigger: ".section_4 .body_section_4",
       start: "top top",
       end: "bottom bottom",
       animation: animation,
@@ -264,34 +259,34 @@ function WhyUs() {
   return (
     <>
       <HeaderWhyUs />
-      <main className={styles.page}>
-        <section className={styles.hero_section}>
-          <div className={styles.heading}>
+      <main className="page">
+        <section className="hero_section section">
+          <div className="heading">
             <h1>
-              <div className={styles.top}>
+              <div className="top">
                 So why
-                <div className={styles.img_bar}>
-                  <div className={styles.div_img}>
+                <div className="img_bar">
+                  <div className="div_img">
                     <Image
-                      className={styles.img}
+                      className="img"
                       src={section_3_images}
                       alt="Description of the image"
                     />
                   </div>
-                  <div className={styles.background}></div>
+                  <div className="background"></div>
                 </div>
                 us?
               </div>
             </h1>
           </div>
-          <div className={styles.title}>
+          <div className="title">
             <p>
               We team up with digital experts to boost
               <br />
               investments and fortify your team.
             </p>
           </div>
-          <div className={styles.video}>
+          <div className="video">
             <video
               src="/assets/hero.mp4"
               width="640"
@@ -302,158 +297,150 @@ function WhyUs() {
             />
           </div>
         </section>
-        <section className={styles.section_1}>
-          <div className={styles.header_section_1}>
-            <h2 className={styles.title_section_1}>
+        <section className="section_1 section">
+          <div className="header_section_1">
+            <h2 className="title_section_1">
               Guess who&apos;s at the <br /> top of Behance? <br /> That&apos;s
               right, we are!
             </h2>
-            <p className={styles.text}>
+            <p className="text">
               Over 1.2 million people saw us, and we earned <br /> 30+ awards in
               various categories.
             </p>
           </div>
           <SwiperSection />
         </section>
-        <section className={styles.section_2}>
-          <div className={styles.header_section_2}>
-            <h2 className={styles.title_section_2}>
+        <section className="section_2 section">
+          <div className="header_section_2">
+            <h2 className="title_section_2">
               Guess who&apos;s at the <br /> top of Dribbble? <br /> That&apos;s
               right, we are!
             </h2>
-            <p className={styles.text}>
+            <p className="text">
               In the last 90 days, we hit 4.6 million views, got
               <br /> 25,000 likes, and 2,200 saves — impressive stats.
             </p>
           </div>
-          <ul className={styles.list}>
-            <li className={styles.item_dribbble}>
+          <ul className="list">
+            <li className="item_dribbble">
               <a
                 target="_blank"
-                className={styles.dribbble__link}
+                className="dribbble__link"
                 href="https://dribbble.com/shots/22806186-SugarCRM-Discover-Advanced-Analytics-Tool"
               >
-                <div className={styles.dribbble__image}>
+                <div className="dribbble__image">
                   <Image
                     alt="SugarCRM Discover – Advanced Analytics Tool"
-                    className={styles.img}
+                    className="img"
                     src={whyUs_section_2_01}
                   />
                 </div>
-                <div className={styles.dribbble__content}>
-                  <div className={styles.dribbble__info}>
-                    <p className={styles.dribbble__company}>Dribbble</p>
-                    <h4 className={styles.dribbble__title}>
+                <div className="dribbble__content">
+                  <div className="dribbble__info">
+                    <p className="dribbble__company">Dribbble</p>
+                    <h4 className="dribbble__title">
                       SugarCRM Discover – Advanced Analytics Tool
                     </h4>
                   </div>
-                  <ul className={styles.dribbble__stats}>
-                    <li className={styles.dribbble__stat}>
-                      <div className={styles.category}>⭐ 33.7k Views</div>
+                  <ul className="dribbble__stats">
+                    <li className="dribbble__stat">
+                      <div className="category">⭐ 33.7k Views</div>
                     </li>
-                    <li className={styles.dribbble__stat}>
-                      <div className={styles.category}>
-                        🏆 4 days in the top
-                      </div>
+                    <li className="dribbble__stat">
+                      <div className="category">🏆 4 days in the top</div>
                     </li>
                   </ul>
                 </div>
               </a>
             </li>
-            <li className={styles.item_dribbble}>
+            <li className="item_dribbble">
               <a
                 target="_blank"
-                className={styles.dribbble__link}
+                className="dribbble__link"
                 href="https://dribbble.com/shots/23173951-Fishbowl-CRM-Business-Management-Solution"
               >
-                <div className={styles.dribbble__image}>
+                <div className="dribbble__image">
                   <Image
                     alt="Fishbowl CRM - Business Management Solution"
-                    className={styles.img}
+                    className="img"
                     src={whyUs_section_2_02}
                   />
                 </div>
-                <div className={styles.dribbble__content}>
-                  <div className={styles.dribbble__info}>
-                    <p className={styles.dribbble__company}>Dribbble</p>
-                    <h4 className={styles.dribbble__title}>
+                <div className="dribbble__content">
+                  <div className="dribbble__info">
+                    <p className="dribbble__company">Dribbble</p>
+                    <h4 className="dribbble__title">
                       Fishbowl CRM - Business Management Solution
                     </h4>
                   </div>
-                  <ul className={styles.dribbble__stats}>
-                    <li className={styles.dribbble__stat}>
-                      <div className={styles.category}>⭐ 52.6k Views</div>
+                  <ul className="dribbble__stats">
+                    <li className="dribbble__stat">
+                      <div className="category">⭐ 52.6k Views</div>
                     </li>
-                    <li className={styles.dribbble__stat}>
-                      <div className={styles.category}>
-                        🏆 15 days in the top
-                      </div>
+                    <li className="dribbble__stat">
+                      <div className="category">🏆 15 days in the top</div>
                     </li>
                   </ul>
                 </div>
               </a>
             </li>
-            <li className={styles.item_dribbble}>
+            <li className="item_dribbble">
               <a
                 target="_blank"
-                className={styles.dribbble__link}
+                className="dribbble__link"
                 href="https://dribbble.com/shots/23181420-Salesforce-Sales-Analytics-Software"
               >
-                <div className={styles.dribbble__image}>
+                <div className="dribbble__image">
                   <Image
                     alt="Salesforce - Sales Analytics Software CRM System"
-                    className={styles.img}
+                    className="img"
                     src={whyUs_section_2_03}
                   />
                 </div>
-                <div className={styles.dribbble__content}>
-                  <div className={styles.dribbble__info}>
-                    <p className={styles.dribbble__company}>Dribbble</p>
-                    <h4 className={styles.dribbble__title}>
+                <div className="dribbble__content">
+                  <div className="dribbble__info">
+                    <p className="dribbble__company">Dribbble</p>
+                    <h4 className="dribbble__title">
                       Salesforce - Sales Analytics Software CRM System
                     </h4>
                   </div>
-                  <ul className={styles.dribbble__stats}>
-                    <li className={styles.dribbble__stat}>
-                      <div className={styles.category}>⭐ 10.8k Views</div>
+                  <ul className="dribbble__stats">
+                    <li className="dribbble__stat">
+                      <div className="category">⭐ 10.8k Views</div>
                     </li>
-                    <li className={styles.dribbble__stat}>
-                      <div className={styles.category}>
-                        🏆 14 days in the top
-                      </div>
+                    <li className="dribbble__stat">
+                      <div className="category">🏆 14 days in the top</div>
                     </li>
                   </ul>
                 </div>
               </a>
             </li>
-            <li className={styles.item_dribbble}>
+            <li className="item_dribbble">
               <a
                 target="_blank"
-                className={styles.dribbble__link}
+                className="dribbble__link"
                 href="https://dribbble.com/shots/23203289-Salesforce-CRM-Invoice-Management-Software"
               >
-                <div className={styles.dribbble__image}>
+                <div className="dribbble__image">
                   <Image
                     alt="Salesforce - CRM Invoice Management Software"
-                    className={styles.img}
+                    className="img"
                     src={whyUs_section_2_04}
                   />
                 </div>
-                <div className={styles.dribbble__content}>
-                  <div className={styles.dribbble__info}>
-                    <p className={styles.dribbble__company}>Dribbble</p>
-                    <h4 className={styles.dribbble__title}>
+                <div className="dribbble__content">
+                  <div className="dribbble__info">
+                    <p className="dribbble__company">Dribbble</p>
+                    <h4 className="dribbble__title">
                       Salesforce - CRM Invoice Management Software
                     </h4>
                   </div>
-                  <ul className={styles.dribbble__stats}>
-                    <li className={styles.dribbble__stat}>
-                      <div className={styles.category}>⭐ 44.5k Views</div>
+                  <ul className="dribbble__stats">
+                    <li className="dribbble__stat">
+                      <div className="category">⭐ 44.5k Views</div>
                     </li>
-                    <li className={styles.dribbble__stat}>
-                      <div className={styles.category}>
-                        🏆 23 days in the top
-                      </div>
+                    <li className="dribbble__stat">
+                      <div className="category">🏆 23 days in the top</div>
                     </li>
                   </ul>
                 </div>
@@ -461,151 +448,145 @@ function WhyUs() {
             </li>
           </ul>
         </section>
-        <section className={styles.section_3}>
-          <div className={styles.header_section_3}>
-            <h2 className={styles.title_section_3}>What else?</h2>
+        <section className="section_3 section">
+          <div className="header_section_3">
+            <h2 className="title_section_3">What else?</h2>
           </div>
-          <ul className={styles.list}>
-            <li className={styles.item}>
-              <div className={styles.sticky}>
-                <div className={styles.title}>
-                  <div className={styles.row}>
+          <ul className="list">
+            <li className="item">
+              <div className="sticky">
+                <div className="title">
+                  <div className="row">
                     <h3>
                       We&apos;re experts in <br />
                       modern trends and
                     </h3>
                   </div>
-                  <div className={styles.row}>
+                  <div className="row">
                     <h3>offer</h3>
-                    <div className={styles.image}>
+                    <div className="image">
                       <Image
                         alt="Mary S."
-                        className={styles.img}
+                        className="img"
                         src={aboutSection_4_01}
                       />
                     </div>
                     <h3>practical</h3>
                   </div>
-                  <div className={styles.row}>
+                  <div className="row">
                     <h3>solutions.</h3>
                   </div>
-                  <div className={styles.quote}>“</div>
+                  <div className="quote">“</div>
                 </div>
-                <div className={styles.text}>
+                <div className="text">
                   <p>
                     Customized <span> design solutions </span> to fit your needs
                     perfectly
                   </p>
                 </div>
               </div>
-              <ul className={styles.reviews}>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+              <ul className="reviews">
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Stan Reznik"
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_01}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Stan Reznik</h4>
-                        <p className={styles.position}>Director of Marketing</p>
+                      <div className="info">
+                        <h4 className="name">Stan Reznik</h4>
+                        <p className="position">Director of Marketing</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         Rondesignlab has a very good eye for what is
                         <span> modern </span> and what looks good while making
                         it
                         <span> functional. </span>
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>🏢 Healthcare</div>
+                    <div className="footer">
+                      <div className="category">🏢 Healthcare</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
                   </a>
                 </li>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Diana Regal"
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_02}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Diana Regal</h4>
-                        <p className={styles.position}>
-                          VP of R&D, Payer Compass
-                        </p>
+                      <div className="info">
+                        <h4 className="name">Diana Regal</h4>
+                        <p className="position">VP of R&D, Payer Compass</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         They cared a great deal about
                         <span> bringing our vision </span> for the site to life.
                         Their project manager was wonderful.
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>
-                        🏢 Consumer Products
-                      </div>
+                    <div className="footer">
+                      <div className="category">🏢 Consumer Products</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
                   </a>
                 </li>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Vivek Jagtap"
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_03}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Vivek Jagtap</h4>
-                        <p className={styles.position}>
-                          Head of Product, Broker
-                        </p>
+                      <div className="info">
+                        <h4 className="name">Vivek Jagtap</h4>
+                        <p className="position">Head of Product, Broker</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         They really understood what we needed and it
                         <span> reflected in their work. </span> Speed and design
                         skills were also key to success.
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>🏢 Real Estate</div>
+                    <div className="footer">
+                      <div className="category">🏢 Real Estate</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
@@ -613,139 +594,135 @@ function WhyUs() {
                 </li>
               </ul>
             </li>
-            <li className={styles.item}>
-              <ul className={styles.reviews}>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+            <li className="item">
+              <ul className="reviews">
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Ben Callaghan"
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_04}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Ben Callaghan</h4>
-                        <p className={styles.position}>
-                          VP of Launch, Goodroot
-                        </p>
+                      <div className="info">
+                        <h4 className="name">Ben Callaghan</h4>
+                        <p className="position">VP of Launch, Goodroot</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         Rondesignlabs employs top-level designers from around
                         the world. Amazing design work.
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>🏢 Healthcare</div>
+                    <div className="footer">
+                      <div className="category">🏢 Healthcare</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
                   </a>
                 </li>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Alex Nozdrin"
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_05}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Alex Nozdrin</h4>
-                        <p className={styles.position}>CEO, Goodworks</p>
+                      <div className="info">
+                        <h4 className="name">Alex Nozdrin</h4>
+                        <p className="position">CEO, Goodworks</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         They showed a variety of <span> skill sets </span> on
                         their team — from branding, illustration, and UX,to
                         animation.
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>🏢 Software</div>
+                    <div className="footer">
+                      <div className="category">🏢 Software</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
                   </a>
                 </li>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Don Stein"
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_06}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Don Stein</h4>
-                        <p className={styles.position}>
-                          Head of Product, Broker
-                        </p>
+                      <div className="info">
+                        <h4 className="name">Don Stein</h4>
+                        <p className="position">Head of Product, Broker</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         Rondesignlab’s <span> speed and quality </span> of
                         delivery was better than most agencies. The team paid
                         close attention to detail.
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>🏢 Telecoms</div>
+                    <div className="footer">
+                      <div className="category">🏢 Telecoms</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
                   </a>
                 </li>
               </ul>
-              <div className={styles.sticky}>
-                <div className={styles.title}>
-                  <div className={styles.row}>
+              <div className="sticky">
+                <div className="title">
+                  <div className="row">
                     <h3>Our team consists of</h3>
                   </div>
-                  <div className={styles.row}>
+                  <div className="row">
                     <h3>specialists</h3>
-                    <div className={styles.image}>
+                    <div className="image">
                       <Image
                         alt="Jack L."
-                        className={styles.img}
+                        className="img"
                         src={aboutSection_4_02}
                       />
                     </div>
                     <h3>with</h3>
                   </div>
-                  <div className={styles.row}>
+                  <div className="row">
                     <h3>vast experience.</h3>
                   </div>
-                  <div className={styles.quote}>“</div>
+                  <div className="quote">“</div>
                 </div>
-                <div className={styles.text}>
+                <div className="text">
                   <p>
                     Rely on our top-notch designers to transform your ideas into
                     reality. We uphold high standards, meet deadlines, and
@@ -754,33 +731,33 @@ function WhyUs() {
                 </div>
               </div>
             </li>
-            <li className={styles.item}>
-              <div className={styles.sticky}>
-                <div className={styles.title}>
-                  <div className={styles.row}>
+            <li className="item">
+              <div className="sticky">
+                <div className="title">
+                  <div className="row">
                     <h3>Our primary goal is</h3>
                   </div>
-                  <div className={styles.row}>
+                  <div className="row">
                     <h3>to identify</h3>
-                    <div className={styles.image}>
+                    <div className="image">
                       <Image
                         alt="Stan D."
-                        className={styles.img}
+                        className="img"
                         src={aboutSection_4_03}
                       />
                     </div>
                     <h3>your</h3>
                   </div>
-                  <div className={styles.row}>
+                  <div className="row">
                     <h3>
                       project&apos;s needs and
                       <br />
                       objectives.
                     </h3>
                   </div>
-                  <div className={styles.quote}>“</div>
+                  <div className="quote">“</div>
                 </div>
-                <div className={styles.text}>
+                <div className="text">
                   <p>
                     We stay ahead of trends to deliver innovative and
                     <span> functional design solutions,</span> providing
@@ -789,107 +766,107 @@ function WhyUs() {
                   </p>
                 </div>
               </div>
-              <ul className={styles.reviews}>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+              <ul className="reviews">
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Eden D."
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_07}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Eden D.</h4>
-                        <p className={styles.position}>CTO, Cryptocurrency</p>
+                      <div className="info">
+                        <h4 className="name">Eden D.</h4>
+                        <p className="position">CTO, Cryptocurrency</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         Their unique talent is in their ability to
                         <span> extract goals and ideas </span> and put them into
                         an excellent final product.
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>🏢 Financial</div>
+                    <div className="footer">
+                      <div className="category">🏢 Financial</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
                   </a>
                 </li>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Dmitry Terner"
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_08}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Dmitry Terner</h4>
-                        <p className={styles.position}>Websites Manager</p>
+                      <div className="info">
+                        <h4 className="name">Dmitry Terner</h4>
+                        <p className="position">Websites Manager</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         Their eye for visual composition and motion in support
                         of the established UX was <span> very impressive.</span>
                         <span>functional. </span>
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>🏢 Education</div>
+                    <div className="footer">
+                      <div className="category">🏢 Education</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
                   </a>
                 </li>
-                <li className={styles.review}>
-                  <div className={styles.wrapper}>
-                    <div className={styles.header}>
-                      <div className={styles.image}>
+                <li className="review">
+                  <div className="wrapper">
+                    <div className="wrapper_header">
+                      <div className="image">
                         <Image
                           alt="Markus Skergeth"
-                          className={styles.img}
+                          className="img"
                           src={whyus_reviews_09}
                         />
                       </div>
-                      <div className={styles.info}>
-                        <h4 className={styles.name}>Markus Skergeth</h4>
-                        <p className={styles.position}>CEO, Goodworks</p>
+                      <div className="info">
+                        <h4 className="name">Markus Skergeth</h4>
+                        <p className="position">CEO, Goodworks</p>
                       </div>
                     </div>
-                    <div className={styles.body}>
-                      <p className={styles.text}>
+                    <div className="body">
+                      <p className="text">
                         They took their time to
                         <span> really understand our needs </span> and
                         challenges. They completed the job on time.
                       </p>
-                      <div className={styles.quote}>“</div>
+                      <div className="quote">“</div>
                     </div>
-                    <div className={styles.footer}>
-                      <div className={styles.category}>🏢 Software</div>
+                    <div className="footer">
+                      <div className="category">🏢 Software</div>
                     </div>
                   </div>
                   <a
                     target="_blank"
-                    className={styles.link}
+                    className="link"
                     href="https://clutch.co/profile/rondesignlab#review-1800933"
                   >
                     View full review
@@ -899,106 +876,151 @@ function WhyUs() {
             </li>
           </ul>
         </section>
-        <section className={styles.section_4}>
-          <div className={styles.header_section_4}>
-            <h2 className={styles.section_4_title}>
+        <section className="section_4 section">
+          <div className="header_section_4">
+            <h2 className="section_4_title">
               What does it entail to achieve excellence in the field of design?
             </h2>
-            <div className={styles.section_4_info}>
-              <p className={styles.section_4_text}>
+            <div className="section_4_info">
+              <p className="section_4_text">
                 A couple of words
                 <br /> about our vision.
               </p>
             </div>
           </div>
-          <div className={styles.body_section_4}>
-            <div className={styles.section_4_text}>
-              <div className={styles.section_4_work_info}>
-                <h1 className={styles.section_4_work_heading}>Evolving</h1>
-                <p className={styles.section_4_work_title}>
+          <div className="body_section_4">
+            <div className="section_4_text">
+              <div className="section_4_work_info">
+                <h1 className="section_4_work_heading">Evolving</h1>
+                <p className="section_4_work_title">
                   Excellence is meeting precise project needs by
                   <span> understanding everyone involved: </span> the client,
                   users, and algorithms.
                 </p>
               </div>
-              <div className={styles.section_4_work_info}>
-                <h1 className={styles.section_4_work_heading}>Design</h1>
-                <p className={styles.section_4_work_title}>
+              <div className="section_4_work_info">
+                <h1 className="section_4_work_heading">Design</h1>
+                <p className="section_4_work_title">
                   Creating designs that are user-friendly and visually appealing
                   <span> is key.</span>
                 </p>
               </div>
-              <div className={styles.section_4_work_info}>
-                <h1 className={styles.section_4_work_heading}>Mastery</h1>
-                <p className={styles.section_4_work_title}>
+              <div className="section_4_work_info">
+                <h1 className="section_4_work_heading">Mastery</h1>
+                <p className="section_4_work_title">
                   Continuous self-improvement involves staying updated,
                   following trends, and occasionally pioneering new ones — a
                   journey toward
                   <span> being exceptional.</span>
                 </p>
               </div>
-              <div className={styles.section_4_work_info}>
-                <h1 className={styles.section_4_work_heading}>Excellence</h1>
-                <p className={styles.section_4_work_title}>
+              <div className="section_4_work_info">
+                <h1 className="section_4_work_heading">Excellence</h1>
+                <p className="section_4_work_title">
                   Excellence acts as our jet engine, propelling us to greater
                   heights and
                   <span> faster success.</span>
                 </p>
               </div>
             </div>
-            <div className={styles.section_4_photo}>
-              <div className={styles.section_4_work_photo_item}>
-                <Image src={section_4_1} alt="" className={styles.img} />
+            <div className="section_4_photo">
+              <div className="section_4_work_photo_item">
+                <Image src={section_4_1} alt="" className="img" />
               </div>
-              <div className={styles.section_4_work_photo_item}>
-                <Image src={section_4_2} alt="" className={styles.img} />
+              <div className="section_4_work_photo_item">
+                <Image src={section_4_2} alt="" className="img" />
               </div>
-              <div className={styles.section_4_work_photo_item}>
-                <Image src={section_4_3} alt="" className={styles.img} />
+              <div className="section_4_work_photo_item">
+                <Image src={section_4_3} alt="" className="img" />
               </div>
-              <div className={styles.section_4_work_photo_item}>
-                <Image src={section_4_4} alt="" className={styles.img} />
+              <div className="section_4_work_photo_item">
+                <Image src={section_4_4} alt="" className="img" />
               </div>
             </div>
           </div>
+          <div className="body_section_4_responsive">
+            <div className="item_responsive">
+              <div className="image">
+                <Image src={section_4_1} alt="" className="img" />
+              </div>
+              <h1 className="section_4_work_heading">Evolving</h1>
+              <p className="section_4_work_title">
+                Excellence is meeting precise project needs by
+                <span> understanding everyone involved: </span> the client,
+                users, and algorithms.
+              </p>
+            </div>
+            <div className="item_responsive">
+              <div className="image">
+                <Image src={section_4_2} alt="" className="img" />
+              </div>
+              <h1 className="section_4_work_heading">Design</h1>
+              <p className="section_4_work_title">
+                Creating designs that are user-friendly and visually appealing
+                <span> is key.</span>
+              </p>
+            </div>
+            <div className="item_responsive">
+              <div className="image">
+                <Image src={section_4_3} alt="" className="img" />
+              </div>
+              <h1 className="section_4_work_heading">Mastery</h1>
+              <p className="section_4_work_title">
+                Continuous self-improvement involves staying updated, following
+                trends, and occasionally pioneering new ones — a journey toward
+                <span> being exceptional.</span>
+              </p>
+            </div>
+            <div className="item_responsive">
+              <div className="image">
+                <Image src={section_4_4} alt="" className="img" />
+              </div>
+              <h1 className="section_4_work_heading">Excellence</h1>
+              <p className="section_4_work_title">
+                Excellence acts as our jet engine, propelling us to greater
+                heights and
+                <span> faster success.</span>
+              </p>
+            </div>
+          </div>
         </section>
-        <section className={styles.section_5}>
-          <div className={styles.header_section_5}>
-            <h2 className={styles.section_5_title}>
+        <section className="section_5 section">
+          <div className="header_section_5">
+            <h2 className="section_5_title">
               Ready to transform your idea with the finest expertise?
             </h2>
           </div>
-          <div className={styles.body_section_5}>
-            <div className={styles.left}>
-              <h3 className={styles.header}>
+          <div className="body_section_5">
+            <div className="left">
+              <h3 className="left_header">
                 First things first... please share your contact details
               </h3>
-              <p className={styles.title}>
+              <p className="title">
                 This will help our team get in touch with you
                 <span> within 24 to 48 hours via email.</span>
               </p>
             </div>
-            <div className={styles.right}>
-              <div className={styles.header}>
-                <h3 className={styles.head_text}>
+            <div className="right">
+              <div className="right_header">
+                <h3 className="head_text">
                   First things first...please share your professional contact
                   details*
                 </h3>
-                <p className={styles.title}>
+                <p className="title">
                   This will help our team get in touch with you within 24 to 48
                   hours via email.
                 </p>
               </div>
-              <form className={styles.form}>
-                <div className={styles.input}>
+              <form className="form">
+                <div className="input">
                   <label for="firstName">First name *</label>
                   <input type="text" name="firstName" placeholder="Saeed" />
                 </div>
-                <div className={styles.input}>
+                <div className="input">
                   <label for="lastName">Last name *</label>
                   <input type="text" name="lastName" placeholder="Khaled" />
                 </div>
-                <div className={styles.input}>
+                <div className="input">
                   <label for="phoneNumber">Phone number *</label>
                   <input
                     type="text"
@@ -1006,7 +1028,7 @@ function WhyUs() {
                     placeholder="201020304050"
                   />
                 </div>
-                <div className={styles.input}>
+                <div className="input">
                   <label for="email">Email *</label>
                   <input
                     type="email"
@@ -1014,7 +1036,7 @@ function WhyUs() {
                     placeholder="name@example.com"
                   />
                 </div>
-                <div className={styles.input}>
+                <div className="input">
                   <label for="company">Company *</label>
                   <input
                     type="text"
@@ -1023,13 +1045,13 @@ function WhyUs() {
                   />
                 </div>
               </form>
-              <button href="" className={styles.button}>
+              <button href="" className="button">
                 <p>OK</p>
                 <svg height="13" width="16">
                   <path d="M14.293.293l1.414 1.414L5 12.414.293 7.707l1.414-1.414L5 9.586z"></path>
                 </svg>
               </button>
-              <div className={styles.counter}>
+              <div className="counter">
                 <span>1</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1049,41 +1071,38 @@ function WhyUs() {
             </div>
           </div>
         </section>
-        <section className={styles.section_6}>
-          <div className={styles.talk__body}>
-            <div className={styles.talk__text}>Shall we chat?</div>
-            <Link
-              href="mailto:hello@rondesignlab.com"
-              className={styles.talk__link}
-            >
+        <section className="section_6 section">
+          <div className="talk__body">
+            <div className="talk__text">Shall we chat?</div>
+            <Link href="mailto:hello@rondesignlab.com" className="talk__link">
               hello@rondesignlab.com
             </Link>
           </div>
-          <div className={styles.talk__title}>
-            <div className={styles.talk__wrapper}>
+          <div className="talk__title">
+            <div className="talk__wrapper">
               <h3>
                 To persuade even the
                 <br />
                 most skeptical, we&apos;ve
               </h3>
-              <div className={styles.talk__motions}>
-                <div className={styles.talk__motion}>
+              <div className="talk__motions">
+                <div className="talk__motion">
                   designed
-                  <div className={styles.talk__image}>
+                  <div className="talk__image">
                     <div>
                       <Image
-                        className={styles.img}
+                        className="img"
                         alt="Let us show your strength"
                         src={yellow_girl_smile}
                       />
                     </div>
-                    <div className={styles.talk__background}></div>
+                    <div className="talk__background"></div>
                   </div>
                   <p>Pilot</p>
                 </div>
                 <button
                   title="Open Typeform Say Hello"
-                  className={styles.talk__button}
+                  className="talk__button"
                 >
                   <svg
                     width="32"

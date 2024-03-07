@@ -11,7 +11,7 @@
 }
 /* =============== Page =============== */
 .bodySayHalloPage {
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
+  /* padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem); */
   font-family: "Urbanist", sans-serif !important;
   width: 100%;
   height: 100%;
@@ -27,8 +27,8 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
   gap: 48px;
-  width: 43.5%;
 }
 .bodySayHalloPage .container .headerSayHallo {
   display: flex;
@@ -121,7 +121,7 @@
 .bodySayHalloPage .container .counter {
   position: absolute;
   top: 3px;
-  left: -40px;
+  left: 76px;
   display: flex;
   justify-content: center;
   align-items: center;
