@@ -7,6 +7,10 @@ import Qr_Code from "@/public/assets/qr-code.svg";
 import share_image from "@/public/assets/share-image.webp";
 import Whatsapp from "@/public/assets/whatsapp.svg";
 import Twitter from "@/public/assets/twitter.svg";
+import Behance from "@/public/assets/behance.svg";
+import Dribbble from "@/public/assets/dribbble.svg";
+import Instagram from "@/public/assets/instagram.svg";
+import Tiktok from "@/public/assets/tiktok.svg";
 import Mail from "@/public/assets/mail.svg";
 import { Yuji_Syuku } from "next/font/google";
 
@@ -275,19 +279,31 @@ const Footer = () => {
           <Link
             className={styles.link}
             href="https://www.tiktok.com/@rondesignlab"
-          ></Link>
+          >
+            <Image className={styles.img} src={Tiktok} aria-live="TikTok" />
+          </Link>
           <Link
             className={styles.link}
             href="https://www.instagram.com/rondesignlab/"
-          ></Link>
+          >
+            <Image
+              className={styles.img}
+              src={Instagram}
+              aria-live="Instagram"
+            />
+          </Link>
           <Link
             className={styles.link}
             href="https://dribbble.com/RonDesignLab"
-          ></Link>
+          >
+            <Image className={styles.img} src={Dribbble} aria-live="Dribbble" />
+          </Link>
           <Link
             className={styles.link}
             href="https://www.behance.net/rondesignlab"
-          ></Link>
+          >
+            <Image className={styles.img} src={Behance} aria-live="Behance" />
+          </Link>
         </div>
       </section>
     </div>

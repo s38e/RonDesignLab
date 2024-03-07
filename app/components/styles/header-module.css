@@ -239,11 +239,12 @@
     font-size: 2.2rem;
   }
 }
-@media (max-height: 896px) {
+/* =============== 896px =============== */
+@media (max-width: 540px) {
   .menu .container .links {
-    gap: 1rem;
+    gap: 0.5rem;
   }
   .menu .container {
-    gap: 5rem;
+    gap: 3rem;
   }
 }
