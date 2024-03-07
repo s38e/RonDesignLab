@@ -535,6 +535,7 @@
   line-height: 140%;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.7);
+  width: 100%;
 }
 .section_3 .col .head {
   font-size: clamp(0.875rem, 0.7688106796rem + 0.4854368932vw, 1.5rem);

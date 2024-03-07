@@ -247,25 +247,28 @@ const About = () => {
     function checkScreenSize() {
       if (window.innerWidth >= 768) {
         const moveDistance =
-          (document.querySelector(".body").clientHeight * 30) / 100;
-        gsap.to(".human", {
+          (document.querySelector(".section_3 .body").clientHeight * 30) / 100;
+        gsap.to(".section_3 .body .human", {
           y: moveDistance,
           scrollTrigger: {
             start: "top 30%",
             end: "bottom 30%",
-            trigger: ".body",
+            trigger: ".section_3 .body",
             // markers: true,
             scrub: 1,
           },
         });
       } else {
-        gsap.set(".human", { y: 0 });
-        ScrollTrigger.getAll(".human").forEach((trigger) => trigger.kill());
+        gsap.set(".section_3 .body .human", { y: 0 });
+        ScrollTrigger.getAll(".section_3 .body .human").forEach((trigger) =>
+          trigger.kill()
+        );
       }
     }
 
-    window.addEventListener("load", checkScreenSize);
+    checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
+    window.addEventListener("load", checkScreenSize);
     // ----------- applySplitTypeAnimation -----------
     const applySplitTypeAnimation = (elements) => {
       elements.forEach((element) => {
