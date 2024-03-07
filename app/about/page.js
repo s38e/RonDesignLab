@@ -54,9 +54,9 @@ const About = () => {
     const closeBtn = document.querySelector(".header_btn__Jtgac");
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
-    const getFreeEstimate = document.querySelector(".header_btn__dPHHT");
+    const getFreeEstimate = document.querySelector(".header .right .btn");
     const header_link = document.querySelector(
-      ".header_link__HXba3:last-child"
+      ".header .left .link:last-child"
     );
     closeBtn.addEventListener("click", function () {
       SayHalloPage.style.display = "none";
@@ -177,6 +177,28 @@ const About = () => {
         duration: 1,
         scrollTrigger: {
           trigger: ".section_7 .headerSection_7",
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+    // ----------- Head Section_8 Animation ----------- //
+    gsap.fromTo(
+      ".section_8 .office__header",
+      {
+        opacity: 0,
+        y: -40,
+        scale: 1.1,
+        z: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".section_8 .office__header",
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
@@ -343,9 +365,9 @@ const About = () => {
                   </div>
                   <div className="background"></div>
                 </div>
-                impression
+                <span>impression</span>
               </div>
-              that matters
+              <span>impression</span> that matters
             </h1>
           </div>
           <div className="scale_photo">
@@ -737,7 +759,7 @@ const About = () => {
               <p className="work_title">
                 He is responsible for
                 <span> developing and implementing successful projects,</span>
-                with his experience and leadership playing an invaluable role in{" "}
+                with his experience and leadership playing an invaluable role in
                 <span> achieving exceptional results</span>
               </p>
               <div className="work_hashtags">
@@ -746,9 +768,90 @@ const About = () => {
                 <div className="work_hashtag">🍕 Delicious food</div>
               </div>
             </div>
-            <div className="item_responsive"></div>
-            <div className="item_responsive"></div>
-            <div className="item_responsive"></div>
+            <div className="item_responsive">
+              <div className="image">
+                <Image src={aboutSection_4_02} alt="" className="img" />
+                <div className="desk">
+                  <div className="name">Mari S.</div>
+                  <a
+                    target="_blank"
+                    className="link"
+                    href="https://www.linkedin.com/in/managmentrondesign/"
+                  >
+                    <Image alt="LinkedIn" className="img" src={linkedinLogo} />
+                  </a>
+                </div>
+              </div>
+              <h1 className="work_heading">UX Architect & CX Design</h1>
+              <p className="work_title">
+                Besides complex architectural solutions, you get a personalized
+                approach to<span> enhance user experience</span>, helping you
+                achieve business goals of the brand.
+              </p>
+              <div className="work_hashtags">
+                <div className="work_hashtag">📷 Photography</div>
+                <div className="work_hashtag">🐾 Pets</div>
+                <div className="work_hashtag">🚗 Cars</div>
+              </div>
+            </div>
+            <div className="item_responsive">
+              <div className="image">
+                <Image src={aboutSection_4_03} alt="" className="img" />
+                <div className="desk">
+                  <div className="name">Stan D.</div>
+                  <a
+                    target="_blank"
+                    className="link"
+                    href="https://www.linkedin.com/in/stan-d/"
+                  >
+                    <Image alt="LinkedIn" className="img" src={linkedinLogo} />
+                  </a>
+                </div>
+              </div>
+              <h1 className="work_heading">Chief information officer</h1>
+              <p className="work_title">
+                With exceptional skills in management, Stan
+                <span> ensures smooth project and process operations, </span>
+                providing solutions and guidance to resolve project-related
+                questions and issues.
+              </p>
+              <div className="work_hashtags">
+                <div className="work_hashtag">📚 Books</div>
+                <div className="work_hashtag">🎾 Tennis</div>
+                <div className="work_hashtag">🏂 Snowboard</div>
+              </div>
+            </div>
+            <div className="item_responsive">
+              <div className="image">
+                <Image src={aboutSection_4_04} alt="" className="img" />
+                <div className="desk">
+                  <div className="name">Jack R.</div>
+                  <a
+                    target="_blank"
+                    className="link"
+                    href="https://www.linkedin.com/in/jack-r-rondesign/"
+                  >
+                    <Image alt="LinkedIn" className="img" src={linkedinLogo} />
+                  </a>
+                </div>
+              </div>
+              <h1 className="work_heading">Co-Founder</h1>
+              <p className="work_title">
+                He is responsible for the
+                <span> company&apos;s strategic development. </span> He plays a
+                pivotal role in developing the company&apos;s
+                <span>
+                  <span> </span>
+                  marketing strategy, increasing its market presence and
+                  visibility.
+                </span>
+              </p>
+              <div className="work_hashtags">
+                <div className="work_hashtag">⛳ Golf</div>
+                <div className="work_hashtag">🎣 Fishing</div>
+                <div className="work_hashtag">💰 Investing</div>
+              </div>
+            </div>
           </div>
         </section>
         <section className="section_5">
