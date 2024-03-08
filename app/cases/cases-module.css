@@ -2,8 +2,10 @@
 .page {
   margin-top: clamp(9.75rem, 8.0084951456rem + 7.9611650485vw, 20rem);
   width: 100%;
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
   font-family: "Urbanist", sans-serif !important;
+}
+.section {
+  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 /* =============== Hero Section =============== */
 .hero_section {
@@ -467,4 +469,14 @@
 }
 .section_4 .talk__title:hover .talk__button svg path {
   fill: white;
+}
+/* =============== Responsive Design =============== */
+/* =============== 768px =============== */
+@media (max-width: 768px) {
+  .section_3 {
+    flex-direction: column;
+  }
+  .section_3 .image {
+    margin-bottom: 2rem;
+  }
 }

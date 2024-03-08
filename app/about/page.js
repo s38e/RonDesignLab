@@ -55,6 +55,12 @@ const About = () => {
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
     const getFreeEstimate = document.querySelector(".header .right .btn");
+    const menuLink_1 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(1)"
+    );
+    const menuLink_2 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(2)"
+    );
     const header_link = document.querySelector(
       ".header .left .link:last-child"
     );
@@ -68,6 +74,12 @@ const About = () => {
       SayHalloPage.style.display = "block";
     });
     footerLink.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    menuLink_1.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    menuLink_2.addEventListener("click", function () {
       SayHalloPage.style.display = "block";
     });
     // ----------- Animation Scale Photo ----------- //
@@ -244,8 +256,10 @@ const About = () => {
       }
     );
     // ----------- Animation Trans Human ----------- //
-    function checkScreenSize() {
-      if (window.innerWidth >= 768) {
+    let TransHumanBool = false;
+
+    function TransHuman() {
+      if (window.innerWidth > 768 && !TransHumanBool) {
         const moveDistance =
           (document.querySelector(".section_3 .body").clientHeight * 30) / 100;
         gsap.to(".section_3 .body .human", {
@@ -254,22 +268,18 @@ const About = () => {
             start: "top 30%",
             end: "bottom 30%",
             trigger: ".section_3 .body",
-            // markers: true,
             scrub: 1,
           },
         });
-      } else {
-        gsap.set(".section_3 .body .human", { y: 0 });
-        const section3Trigger = ScrollTrigger.getById("section_3_trigger");
-        if (section3Trigger) {
-          section3Trigger.kill();
-        }
+        TransHumanBool = true;
       }
     }
 
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    window.addEventListener("load", checkScreenSize);
+    TransHuman();
+    window.addEventListener("resize", TransHuman.bind(this));
+    return () => {
+      window.removeEventListener("resize", TransHuman.bind(this));
+    };
     // ----------- applySplitTypeAnimation -----------
     const applySplitTypeAnimation = (elements) => {
       elements.forEach((element) => {

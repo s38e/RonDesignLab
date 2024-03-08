@@ -51,6 +51,18 @@ function WhyUs() {
     const header_link = document.querySelector(
       ".header .left .link:last-child"
     );
+    const menuLink_1 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(1)"
+    );
+    const menuLink_2 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(2)"
+    );
+    menuLink_1.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    menuLink_2.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
     closeBtn.addEventListener("click", function () {
       SayHalloPage.style.display = "none";
     });

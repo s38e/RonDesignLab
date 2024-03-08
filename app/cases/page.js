@@ -33,12 +33,22 @@ function Cases() {
     );
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
-    const getFreeEstimate = document.querySelector(
-      ".header_header__luzIS .header_right__N_vFR .header_btn__YWO7u"
-    );
+    const getFreeEstimate = document.querySelector(".header .right .btn");
     const header_link = document.querySelector(
-      ".header_header__luzIS .header_left__qhWEe .header_link__7dRXf:last-child"
+      ".header .left .link:last-child"
     );
+    const menuLink_1 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(1)"
+    );
+    const menuLink_2 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(2)"
+    );
+    menuLink_1.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    menuLink_2.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
     closeBtn.addEventListener("click", function () {
       SayHalloPage.style.display = "none";
     });
@@ -108,24 +118,37 @@ function Cases() {
       applySplitTypeAnimation(partnersTextElements);
     }
     // ----------- Animation Trans Human ----------- //
-    const moveDistance =
-      (document.querySelector(".section_3 .content").clientHeight * 28) / 100;
-    gsap.to(".section_3 .image", {
-      y: moveDistance,
-      scrollTrigger: {
-        start: "top 30%",
-        end: "bottom 30%",
-        trigger: ".section_3 .content",
-        // markers: true,
-        scrub: 1,
-      },
-    });
+    let TransHumanBool = false;
+
+    function TransHuman() {
+      if (window.innerWidth > 768 && !TransHumanBool) {
+        const moveDistance =
+          (document.querySelector(".section_3 .content").clientHeight * 30) /
+          100;
+        gsap.to(".section_3 .image", {
+          y: moveDistance,
+          scrollTrigger: {
+            start: "top 30%",
+            end: "bottom 30%",
+            trigger: ".section_3 .content",
+            scrub: 1,
+          },
+        });
+        TransHumanBool = true;
+      }
+    }
+
+    TransHuman();
+    window.addEventListener("resize", TransHuman.bind(this));
+    return () => {
+      window.removeEventListener("resize", TransHuman.bind(this));
+    };
   });
   return (
     <>
       <HeaderCases />
       <main className="page">
-        <section className="hero_section">
+        <section className="hero_section section">
           <div className="heading">
             <h1>We offer</h1>
             <div className="img_bar">
@@ -141,7 +164,7 @@ function Cases() {
             <h1>the diversity of skills</h1>
           </div>
         </section>
-        <section className="section_1">
+        <section className="section_1 section">
           <h1
             className="heading"
             id="heading_section_1"
@@ -238,7 +261,7 @@ function Cases() {
           </div>
         </section>
         <MultiFilters />
-        <section className="section_3">
+        <section className="section_3 section">
           <p class="quote">“</p>
           <div class="image">
             <Image
@@ -247,7 +270,7 @@ function Cases() {
               src={review_casesPage}
             />
           </div>
-          <div class="content">
+          <div class="content" id="section_3_trigger">
             <h2 class="title">
               Thank you for your contribution to making the 2.0 app for Broker
               Network. Because of your support &amp; excellence in design, we as
@@ -270,7 +293,7 @@ function Cases() {
             </p>
           </div>
         </section>
-        <section className="section_4">
+        <section className="section_4 section">
           <div className="talk__body">
             <div className="talk__text">Shall we chat?</div>
             <Link href="mailto:hello@rondesignlab.com" className="talk__link">

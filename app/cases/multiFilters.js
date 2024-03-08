@@ -63,7 +63,7 @@ function MultiFilters() {
   };
 
   return (
-    <div className="category">
+    <div className="category section">
       <div className="category-container">
         {filters.map((category, idx) => (
           <button

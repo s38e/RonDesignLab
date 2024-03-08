@@ -3,8 +3,7 @@ import "./header-module.css";
 import Link from "next/link";
 
 const HeaderPilot = () => {
-  // -------------- Open Menu and Height Header -------------- //
-
+  // -------------- Open Menu and Height Menu -------------- //
   const [menuActive, setMenuActive] = useState(false);
 
   const toggleMenu = () => {

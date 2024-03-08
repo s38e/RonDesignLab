@@ -134,3 +134,9 @@
 .bodySayHalloPage .container .counter svg {
   fill: #b8b8b8;
 }
+/* =================================================== */
+@media (max-width: 1320px) {
+  .bodySayHalloPage .container .counter {
+    display: none;
+  }
+}

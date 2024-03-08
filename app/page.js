@@ -45,20 +45,32 @@ const Home = () => {
     // ----------- Open Say Hallo Form ----------- //
     const closeBtn = document.querySelector(".header_btn__Jtgac");
     const SayHalloPage = document.querySelector(".SayHalloPage");
-    const getFreeEstimate = document.querySelector(".header_btn__VAD9l");
+    const getFreeEstimate = document.querySelector(".header .right .btn");
     const footerLink = document.querySelector("#SayHalloLink");
     const header_link = document.querySelector(
-      ".header_link___CESc:last-child"
+      ".header .left .link:last-child"
     );
-    // closeBtn.addEventListener("click", function () {
-    //   SayHalloPage.style.display = "none";
-    // });
-    // header_link.addEventListener("click", function () {
-    //   SayHalloPage.style.display = "block";
-    // });
-    // getFreeEstimate.addEventListener("click", function () {
-    //   SayHalloPage.style.display = "block";
-    // });
+    const menuLink_1 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(1)"
+    );
+    const menuLink_2 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(2)"
+    );
+    menuLink_1.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    menuLink_2.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    closeBtn.addEventListener("click", function () {
+      SayHalloPage.style.display = "none";
+    });
+    header_link.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    getFreeEstimate.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
     footerLink.addEventListener("click", function () {
       SayHalloPage.style.display = "block";
     });

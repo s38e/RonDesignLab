@@ -13,7 +13,27 @@ import yellow_girl_smile from "@/public/assets/yellow-girl-smile.webp";
 gsap.registerPlugin(ScrollTrigger);
 
 function SayHallo() {
-  useEffect(() => {});
+  useEffect(() => {
+    const container = document.querySelector(".bodySayHalloPage .container");
+    const form = document.querySelector(".bodySayHalloPage .container .form");
+
+    const mediaQuery = window.matchMedia("(max-height: 1320px)");
+
+    const updateStyles = (matches) => {
+      if (matches) {
+        container.style.gap = "30px";
+        form.style.gap = "20px";
+      } else {
+        container.style.gap = "";
+        form.style.gap = "";
+      }
+    };
+
+    updateStyles(mediaQuery.matches);
+    mediaQuery.addListener((event) => {
+      updateStyles(event.matches);
+    });
+  });
 
   return (
     <div className="SayHalloPage">

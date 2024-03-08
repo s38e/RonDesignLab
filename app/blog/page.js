@@ -33,11 +33,15 @@ function Pilot() {
     );
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
-    const getFreeEstimate = document.querySelector(
-      ".header_header__7ure6 .header_right__0ZK_O .header_btn__m_C4M"
-    );
+    const getFreeEstimate = document.querySelector(".header .right .btn");
     const header_link = document.querySelector(
-      ".header_header__7ure6 .header_left__r7HOb .header_link__1s09d:last-child"
+      ".header .left .link:last-child"
+    );
+    const menuLink_1 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(1)"
+    );
+    const menuLink_2 = document.querySelector(
+      ".menu .container .btns .btn:nth-child(2)"
     );
     closeBtn.addEventListener("click", function () {
       SayHalloPage.style.display = "none";
@@ -49,6 +53,12 @@ function Pilot() {
       SayHalloPage.style.display = "block";
     });
     footerLink.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    menuLink_1.addEventListener("click", function () {
+      SayHalloPage.style.display = "block";
+    });
+    menuLink_2.addEventListener("click", function () {
       SayHalloPage.style.display = "block";
     });
     // ----------- Smooth Scroll ----------- //
