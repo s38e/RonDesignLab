@@ -260,9 +260,10 @@ const About = () => {
         });
       } else {
         gsap.set(".section_3 .body .human", { y: 0 });
-        ScrollTrigger.getAll(".section_3 .body .human").forEach((trigger) =>
-          trigger.kill()
-        );
+        const section3Trigger = ScrollTrigger.getById("section_3_trigger");
+        if (section3Trigger) {
+          section3Trigger.kill();
+        }
       }
     }
 
@@ -551,7 +552,7 @@ const About = () => {
         </section>
         <section className="section_3">
           <p className="quote">“</p>
-          <div className="body">
+          <div className="body" id="section_3_trigger">
             <div className="content">
               <p className="text">
                 Rondesignlabs employs <span> top-level </span> designers from
