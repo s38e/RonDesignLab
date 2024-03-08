@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
-.page {
+.pageWhyUsPage {
   margin-top: clamp(9.75rem, 8.0084951456rem + 7.9611650485vw, 20rem);
   width: 100%;
   font-family: "Urbanist", sans-serif !important;
@@ -246,6 +246,7 @@
   display: flex;
   gap: clamp(3.125rem, 1.3197815534rem + 8.2524271845vw, 13.75rem);
   flex-direction: column;
+  align-items: center !important;
 }
 .section_3 .header_section_3 {
   display: flex;
@@ -981,11 +982,11 @@
 }
 /* =============== Section_6 =============== */
 .section_6 {
-  gap: clamp(3.125rem, 2.3816747573rem + 3.3980582524vw, 7.5rem);
+  gap: clamp(3.125rem, 2.3816747573rem + 3.3980582524vw, 7.5rem) !important;
   display: flex;
   flex-direction: column;
   margin-bottom: clamp(6.25rem, 2.2148058252rem + 18.4466019417vw, 30rem);
-  align-items: flex-start;
+  align-items: flex-start !important;
 }
 .section_6 .talk__body {
   display: flex;
@@ -1024,32 +1025,37 @@
   transition: transform 0.25s;
   transform-origin: left;
 }
-.section_6 .talk__title {
+.section_6 {
   gap: clamp(0.4375rem, 0.2994538835rem + 0.6310679612vw, 1.25rem);
   cursor: pointer;
   display: flex;
   align-items: center;
   line-height: 130%;
 }
-.section_6 .talk__title .talk__motions {
+.section_6 .talk__wrapper {
+  line-height: 120%;
+  font-size: clamp(2.625rem, 1.265776699rem + 6.213592233vw, 10.625rem);
+  font-weight: 600;
+}
+.section_6 .talk__wrapper .mobile-br {
+  display: none;
+}
+.section_6 .talk__wrapper .talk__title {
+  line-height: 120%;
+  gap: clamp(0.4375rem, 0.2994538835rem + 0.6310679612vw, 1.25rem);
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: clamp(0.4375rem, 0.2994538835rem + 0.6310679612vw, 1.25rem);
 }
-.section_6 .talk__title .talk__wrapper h3,
-.section_6 .talk__title .talk__motions .talk__motion {
+.section_6 .talk__wrapper .talk__title .desktop .talk__motion {
   gap: clamp(0.4375rem, 0.2994538835rem + 0.6310679612vw, 1.25rem);
   position: relative;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   white-space: pre;
-  font-size: clamp(2.625rem, 1.265776699rem + 6.213592233vw, 10.625rem);
-  line-height: 120%;
-  font-weight: 600;
 }
-.section_6 .talk__title .talk__motions .talk__motion::before {
+.section_6 .talk__wrapper .talk__title .desktop .talk__motion::before {
   content: "";
   position: absolute;
   left: 0;
@@ -1060,22 +1066,28 @@
   transform: scaleX(0);
   transition: transform 0.25s;
   transform-origin: right;
-  bottom: -40px;
 }
-.section_6 .talk__title:hover .talk__motions .talk__motion::before {
-  content: "";
+.section_6 .talk__wrapper:hover .talk__title .desktop .talk__motion::before {
   transform: scaleX(1);
-  transition: transform 0.25s;
   transform-origin: left;
 }
-.section_6 .talk__title .talk__motions .talk__motion .talk__image {
+.section_6 .talk__wrapper .talk__title .desktop .talk__motion .weve {
+  display: none;
+}
+.section_6 .talk__wrapper .talk__title .desktop .talk__motion .talk__image {
   border-radius: clamp(1.5rem, 0.9053398058rem + 2.7184466019vw, 5rem);
   height: clamp(2.625rem, 1.4781553398rem + 5.2427184466vw, 9.375rem);
   width: clamp(4rem, 2.1841626214rem + 8.3009708738vw, 14.6875rem);
   position: relative;
   overflow: hidden;
 }
-.section_6 .talk__title .talk__motions .talk__motion .talk__image div .img {
+.section_6
+  .talk__wrapper
+  .talk__title
+  .desktop
+  .talk__motion
+  .talk__image
+  .img {
   position: absolute;
   z-index: 1;
   top: -15%;
@@ -1086,10 +1098,10 @@
   height: auto;
 }
 .section_6
+  .talk__wrapper
   .talk__title
-  .talk__motions
+  .desktop
   .talk__motion
-  .talk__image
   .talk__background {
   position: absolute;
   width: 100%;
@@ -1098,7 +1110,12 @@
   left: 0;
   background-color: #ffe99d;
 }
-.section_6 .talk__title .talk__button {
+.section_6 .talk__wrapper .talk__title .desktop .motion {
+  display: none;
+  gap: clamp(0.4375rem, 0.2994538835rem + 0.6310679612vw, 1.25rem);
+  align-items: center;
+}
+.section_6 .talk__wrapper .talk__title .talk__button {
   border-radius: clamp(1.5625rem, 1.0315533981rem + 2.427184466vw, 4.6875rem);
   padding-left: clamp(1.875rem, 1.1316747573rem + 3.3980582524vw, 6.25rem);
   padding-bottom: clamp(1.125rem, 0.6365291262rem + 2.2330097087vw, 4rem);
@@ -1110,20 +1127,35 @@
   overflow: hidden;
   background-color: #fff;
   transition: background-color 0.3s ease 0s;
-  border: none;
   cursor: pointer;
 }
-.section_6 .talk__title .talk__button svg {
+.section_6 .talk__wrapper .talk__title .talk__button svg {
   height: clamp(0.625rem, 0.348907767rem + 1.2621359223vw, 2.25rem);
   width: clamp(1.25rem, 0.6659587379rem + 2.6699029126vw, 4.6875rem);
 }
-.section_6 .talk__title:hover .talk__button {
-  background-color: #000;
+.section_6 .talk__wrapper:hover .talk__title .talk__button {
+  background-color: black;
+  fill: white;
 }
-.section_6 .talk__title:hover .talk__button svg path {
+.section_6 .talk__wrapper:hover .talk__title .talk__button svg {
   fill: white;
 }
 /* =============== Responsive Design =============== */
+/* =============== 1100px =============== */
+@media (max-width: 1100px) {
+  .section_6 .talk__wrapper .talk__title .desktop .motion {
+    display: flex;
+  }
+  .section_6 .talk__wrapper .talk__title .motion .talk__button,
+  .section_6 .talk__wrapper .talk__title .desktop .talk__motion .weve {
+    display: inline-block;
+  }
+  .section_6 .talk__wrapper .talk__title .talk__button,
+  .section_6 .talk__wrapper .talk__title .desktop .talk__motion .text,
+  .section_6 .talk__wrapper .weve {
+    display: none;
+  }
+}
 /* =============== 768px =============== */
 @media (max-width: 768px) {
   .section_2 .list {
@@ -1141,6 +1173,7 @@
   .section_3 .list .item:nth-child(2) {
     flex-direction: column-reverse;
   }
+  .section_6 .talk__wrapper br,
   .section_4 .body_section_4 {
     display: none;
   }
@@ -1158,5 +1191,17 @@
   }
   .section_5 .body_section_5 .right .counter {
     left: 7px;
+  }
+}
+/* =============== 500px =============== */
+@media (max-width: 500px) {
+  .section_6 .talk__wrapper .weve {
+    display: inline-block;
+  }
+  .section_6 .talk__wrapper .mobile-br {
+    display: block;
+  }
+  .section_6 .talk__wrapper .talk__title .desktop .talk__motion .weve {
+    display: none;
   }
 }

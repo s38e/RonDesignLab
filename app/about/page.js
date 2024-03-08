@@ -54,7 +54,9 @@ const About = () => {
     const closeBtn = document.querySelector(".header_btn__Jtgac");
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
-    const getFreeEstimate = document.querySelector(".header .right .btn");
+    const getFreeEstimate = document.querySelector(
+      ".headerAboutPage .right .btn"
+    );
     const menuLink_1 = document.querySelector(
       ".menu .container .btns .btn:nth-child(1)"
     );
@@ -62,7 +64,7 @@ const About = () => {
       ".menu .container .btns .btn:nth-child(2)"
     );
     const header_link = document.querySelector(
-      ".header .left .link:last-child"
+      ".headerAboutPage .left .link:last-child"
     );
     closeBtn.addEventListener("click", function () {
       SayHalloPage.style.display = "none";
@@ -83,11 +85,11 @@ const About = () => {
       SayHalloPage.style.display = "block";
     });
     // ----------- Animation Scale Photo ----------- //
-    gsap.to(".office__image", {
+    gsap.to(".hero_section .scale_photo", {
       scale: "1.1",
       duration: 1,
       scrollTrigger: {
-        trigger: ".office__image",
+        trigger: ".hero_section .scale_photo",
         start: "top center",
         end: "+=500",
         scrub: 1,
@@ -128,6 +130,29 @@ const About = () => {
         },
       }
     );
+    // ----------- Head Section_2 Animation ----------- //
+    gsap.fromTo(
+      ".section_4 .heading .head",
+      {
+        opacity: 0,
+        y: -40,
+        scale: 1.1,
+        z: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".section_4 .heading .head",
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
     // ----------- Head Section_5 Animation ----------- //
     gsap.fromTo(
       ".headerSection_5",
@@ -256,30 +281,19 @@ const About = () => {
       }
     );
     // ----------- Animation Trans Human ----------- //
-    let TransHumanBool = false;
-
-    function TransHuman() {
-      if (window.innerWidth > 768 && !TransHumanBool) {
-        const moveDistance =
-          (document.querySelector(".section_3 .body").clientHeight * 30) / 100;
-        gsap.to(".section_3 .body .human", {
-          y: moveDistance,
-          scrollTrigger: {
-            start: "top 30%",
-            end: "bottom 30%",
-            trigger: ".section_3 .body",
-            scrub: 1,
-          },
-        });
-        TransHumanBool = true;
-      }
+    if (window.innerWidth >= 768) {
+      const moveDistance =
+        (document.querySelector(".section_3 .body").clientHeight * 30) / 100;
+      gsap.to(".section_3 .body .human", {
+        y: moveDistance,
+        scrollTrigger: {
+          start: "top 30%",
+          end: "bottom 30%",
+          trigger: ".section_3 .body",
+          scrub: 1,
+        },
+      });
     }
-
-    TransHuman();
-    window.addEventListener("resize", TransHuman.bind(this));
-    return () => {
-      window.removeEventListener("resize", TransHuman.bind(this));
-    };
     // ----------- applySplitTypeAnimation -----------
     const applySplitTypeAnimation = (elements) => {
       elements.forEach((element) => {
@@ -308,9 +322,12 @@ const About = () => {
         );
       });
     };
-    const aboutHeadingElements =
-      document.querySelectorAll("#heading_section_1");
-    const partnersTextElements = document.querySelectorAll(".partners__text");
+    const aboutHeadingElements = document.querySelectorAll(
+      ".section_1 #heading_section_1"
+    );
+    const partnersTextElements = document.querySelectorAll(
+      ".section_1 .partners__list .partners__item .partners__text"
+    );
 
     if (aboutHeadingElements.length > 0) {
       applySplitTypeAnimation(aboutHeadingElements);
@@ -359,8 +376,8 @@ const About = () => {
   return (
     <>
       <HeaderAbout />
-      <main className="page">
-        <section className="hero_section">
+      <main className="pageAboutPage">
+        <section className="hero_section section">
           <div className="heading">
             <h1>
               <div className="top">
@@ -391,7 +408,7 @@ const About = () => {
             </div>
           </div>
         </section>
-        <section className="section_1">
+        <section className="section_1 section">
           <h1
             className="heading"
             id="heading_section_1"
@@ -487,7 +504,7 @@ const About = () => {
             </div>
           </div>
         </section>
-        <section className="section_2">
+        <section className="section_2 section">
           <h2 className="home__title">
             Your challenges, <br /> our expertise <br /> in solving them
           </h2>
@@ -560,7 +577,7 @@ const About = () => {
             </ul>
           </div>
         </section>
-        <section className="section_3">
+        <section className="section_3 section">
           <p className="quote">“</p>
           <div className="body" id="section_3_trigger">
             <div className="content">
@@ -628,7 +645,7 @@ const About = () => {
             </div>
           </div>
         </section>
-        <section className="section_4">
+        <section className="section_4 section">
           <div className="heading">
             <h1 className="head">
               What are we
@@ -868,7 +885,7 @@ const About = () => {
             </div>
           </div>
         </section>
-        <section className="section_5">
+        <section className="section_5 section">
           <h2 className="headerSection_5">Meet our team</h2>
           <div className="bodySection_5">
             <div className="team__image">
@@ -895,7 +912,7 @@ const About = () => {
             </ul>
           </div>
         </section>
-        <section className="section_6">
+        <section className="section_6 section">
           <div className="bodySection_6">
             <div className="things__wrapper">
               <div className="things__motion">
@@ -960,7 +977,7 @@ const About = () => {
             </li>
           </ul>
         </section>
-        <section className="section_7">
+        <section className="section_7 section">
           <h3 className="headerSection_7">
             Pleasant moments
             <br />
@@ -1011,7 +1028,7 @@ const About = () => {
             </ul>
           </div>
         </section>
-        <section className="section_8">
+        <section className="section_8 section">
           <h2 className="office__header">Our office</h2>
           <div className="office__wrapper">
             <div className="office__image">
@@ -1028,7 +1045,7 @@ const About = () => {
             </div>
           </div>
         </section>
-        <section className="section_9">
+        <section className="section_9 section">
           <div className="talk__body">
             <div className="talk__text">Shall we chat?</div>
             <Link href="mailto:hello@rondesignlab.com" className="talk__link">

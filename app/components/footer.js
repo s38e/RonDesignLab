@@ -234,27 +234,26 @@ const Footer = () => {
             </div>
           </a>
         </div>
-
         <div className={styles.col}>
           <h3 className={styles.head}>Pages</h3>
           <div className={styles.links}>
             <Link className={styles.link} href="" id="SayHalloLink">
-              Say Hello
+              <p>Say Hello</p>
             </Link>
             <Link className={styles.link} href="/pilot">
-              Pilot
+              <p>Pilot</p>
             </Link>
             <Link className={styles.link} href="/about">
-              About Us
+              <p>About Us</p>
             </Link>
             <Link className={styles.link} href="/whyUs">
-              Why Us
+              <p>Why Us</p>
             </Link>
             <Link className={styles.link} href="/cases">
-              Cases
+              <p>Cases</p>
             </Link>
             <Link className={styles.link} href="/blog">
-              Blog
+              <p>Blog</p>
             </Link>
           </div>
         </div>

@@ -12,7 +12,7 @@ const Header = () => {
   };
   return (
     <>
-      <header className="header">
+      <header className="headerHomePage">
         <div className="left">
           <Link href="/" className="logo">
             <svg

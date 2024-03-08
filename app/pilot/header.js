@@ -11,7 +11,7 @@ const HeaderPilot = () => {
   };
   return (
     <>
-      <header className="header">
+      <header className="headerPilotPage">
         <div className="left">
           <Link href="/" className="logo">
             <svg

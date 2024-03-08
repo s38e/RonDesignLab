@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
-.page {
+.pageAboutPage {
   margin-top: clamp(9.75rem, 8.0084951456rem + 7.9611650485vw, 20rem);
   width: 100%;
-  /* padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem); */
   font-family: "Urbanist", sans-serif !important;
+}
+.section {
+  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 /* =============== Hero Section =============== */
 .hero_section {
@@ -13,7 +15,6 @@
   flex-direction: column;
   gap: clamp(3.125rem, 2.3816747573rem + 3.3980582524vw, 7.5rem);
   margin-bottom: clamp(6.25rem, 2.2148058252rem + 18.4466019417vw, 30rem);
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 .hero_section .heading h1 {
   font-size: clamp(2.625rem, 1.265776699rem + 6.213592233vw, 10.625rem);
@@ -108,7 +109,6 @@
   gap: clamp(0.5rem, 0.2451456311rem + 1.1650485437vw, 2rem);
   display: flex;
   flex-direction: column;
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 .section_1 #heading_section_1,
 .section_1 .heading {
@@ -203,7 +203,7 @@
   gap: clamp(3.125rem, 1.3197815534rem + 8.2524271845vw, 13.75rem);
   display: flex;
   flex-direction: column;
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
+
   overflow: hidden;
 }
 .section_2 .home__title {
@@ -404,7 +404,6 @@
   column-gap: clamp(1.875rem, 0.494538835rem + 6.3106796117vw, 10rem);
   display: flex;
   align-items: flex-start;
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 .section_3 .quote {
   font-size: clamp(3rem, 2.0230582524rem + 4.4660194175vw, 8.75rem);
@@ -529,7 +528,7 @@
     0.7382686084rem + 6.1488673139vw,
     10rem
   );
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
+
   display: flex;
   flex-direction: column;
   gap: clamp(6.25rem, 5.1881067961rem + 4.854368932vw, 12.5rem);
@@ -776,7 +775,6 @@
   align-items: center;
   margin-bottom: clamp(6.25rem, 2.2148058252rem + 18.4466019417vw, 30rem);
   gap: clamp(3rem, 1.1735436893rem + 8.3495145631vw, 13.75rem);
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 .section_5 .headerSection_5 {
   font-size: clamp(2.625rem, 1.265776699rem + 6.213592233vw, 10.625rem);
@@ -882,7 +880,6 @@
   height: clamp(93.75rem, 67.2026699029rem + 121.359223301vw, 250rem);
   position: relative;
   padding-top: 26.5%;
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 .section_6 .bodySection_6 {
   gap: clamp(3.75rem, 2.2633495146rem + 6.7961165049vw, 12.5rem);
@@ -1025,7 +1022,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
+
   overflow: hidden;
 }
 .section_7 .headerSection_7 {
@@ -1095,7 +1092,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 .section_8 .office__header {
   font-size: clamp(2.625rem, 1.265776699rem + 6.213592233vw, 10.625rem);
@@ -1158,7 +1154,6 @@
   flex-direction: column;
   margin-bottom: clamp(6.25rem, 2.2148058252rem + 18.4466019417vw, 30rem);
   align-items: flex-start;
-  padding: 0 clamp(1.25rem, -0.661407767rem + 8.7378640777vw, 12.5rem);
 }
 .section_9 .talk__body {
   display: flex;
@@ -1331,6 +1326,7 @@
   }
   .section_3 .body {
     flex-direction: column-reverse;
+    gap: 2.5rem;
   }
 }
 /* =============== 600px =============== */

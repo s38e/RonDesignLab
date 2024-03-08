@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./header-module.css";
 import Link from "next/link";
 
-function HeaderCases() {
+function HeaderBlog() {
   // -------------- Open Menu and Height Menu -------------- //
   const [menuActive, setMenuActive] = useState(false);
 
@@ -11,7 +11,7 @@ function HeaderCases() {
   };
   return (
     <>
-      <header className="header">
+      <header className="headerBlogPage">
         <div className="left">
           <Link href="/" className="logo">
             <svg
@@ -105,4 +105,4 @@ function HeaderCases() {
   );
 }
 
-export default HeaderCases;
+export default HeaderBlog;

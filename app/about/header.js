@@ -11,7 +11,7 @@ function HeaderAbout() {
   };
   return (
     <>
-      <header className="header">
+      <header className="headerAboutPage">
         <div className="left">
           <Link href="/" className="logo">
             <svg

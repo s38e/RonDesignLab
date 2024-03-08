@@ -19,13 +19,13 @@ import Lenis from "@studio-freight/lenis";
 import Footer from "@/app/components/footer";
 import SayHallo from "../sayHallo/page";
 import SplitType from "split-type";
-import HeaderCases from "./header";
 import MultiFilters from "./multiFilters";
+import HeaderBlog from "./header";
 const { useEffect } = require("react");
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Pilot() {
+function Blog() {
   useEffect(() => {
     // ----------- Open Say Hallo Form ----------- //
     const closeBtn = document.querySelector(
@@ -33,9 +33,11 @@ function Pilot() {
     );
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
-    const getFreeEstimate = document.querySelector(".header .right .btn");
+    const getFreeEstimate = document.querySelector(
+      ".headerBlogPage .right .btn"
+    );
     const header_link = document.querySelector(
-      ".header .left .link:last-child"
+      ".headerBlogPage .left .link:last-child"
     );
     const menuLink_1 = document.querySelector(
       ".menu .container .btns .btn:nth-child(1)"
@@ -77,8 +79,8 @@ function Pilot() {
   });
   return (
     <>
-      <HeaderCases />
-      <main className="page">
+      <HeaderBlog />
+      <main className="pageBlogPage">
         <section className="hero_section">
           <div className="heading">
             <h1>We offer</h1>
@@ -142,4 +144,4 @@ function Pilot() {
   );
 }
 
-export default Pilot;
+export default Blog;

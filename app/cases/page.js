@@ -33,9 +33,11 @@ function Cases() {
     );
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
-    const getFreeEstimate = document.querySelector(".header .right .btn");
+    const getFreeEstimate = document.querySelector(
+      ".headerCasesPage .right .btn"
+    );
     const header_link = document.querySelector(
-      ".header .left .link:last-child"
+      ".headerCasesPage .left .link:last-child"
     );
     const menuLink_1 = document.querySelector(
       ".menu .container .btns .btn:nth-child(1)"
@@ -147,7 +149,7 @@ function Cases() {
   return (
     <>
       <HeaderCases />
-      <main className="page">
+      <main className="pageCasesPage">
         <section className="hero_section section">
           <div className="heading">
             <h1>We offer</h1>

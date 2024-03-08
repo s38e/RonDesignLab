@@ -11,15 +11,31 @@ import swiperImg_4 from "@/public/assets/swiperImg_4.webp";
 import swiperImg_5 from "@/public/assets/swiperImg_5.webp";
 import swiperImg_6 from "@/public/assets/swiperImg_6.webp";
 import swiperImg_7 from "@/public/assets/swiperImg_7.webp";
+import { useState, useEffect } from "react";
 
 const SwiperSection = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleResize = () => setIsMobile(mediaQuery.matches);
+
+    mediaQuery.addListener(handleResize);
+
+    return () => mediaQuery.removeListener(handleResize);
+  }, []);
+
+  const slidesPerView = isMobile ? 1 : 1.37;
+
   return (
     <Swiper
       navigation={true}
       modules={[Autoplay, Navigation]}
       loop={true}
       spaceBetween={20}
-      slidesPerView={1.37}
+      slidesPerView={slidesPerView}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,

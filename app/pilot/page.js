@@ -36,9 +36,11 @@ function Pilot() {
     );
     const SayHalloPage = document.querySelector(".SayHalloPage");
     const footerLink = document.querySelector("#SayHalloLink");
-    const getFreeEstimate = document.querySelector(".header .right .btn");
+    const getFreeEstimate = document.querySelector(
+      ".headerPilotPage .right .btn"
+    );
     const header_link = document.querySelector(
-      ".header .left .link:last-child"
+      ".headerPilotPage .left .link:last-child"
     );
     const menuLink_1 = document.querySelector(
       ".menu .container .btns .btn:nth-child(1)"

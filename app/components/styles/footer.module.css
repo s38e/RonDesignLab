@@ -543,14 +543,13 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.7);
 }
-.section_3 .col .links .link {
+.section_3 .col .links .link p {
   transition: transform 0.25s;
   position: relative;
-  width: min-content;
-  text-wrap: nowrap;
   font-size: clamp(0.875rem, 0.7688106796rem + 0.4854368932vw, 1.5rem);
+  display: inline-block;
 }
-.section_3 .col .links .link::before {
+.section_3 .col .links .link p::before {
   content: "";
   position: absolute;
   left: 0;
@@ -565,7 +564,7 @@
 .section_3 .col .links .link:hover {
   color: black;
 }
-.section_3 .col .links .link:hover::before {
+.section_3 .col .links .link:hover p::before {
   content: "";
   transform: scaleX(1);
   transition: transform 0.25s;

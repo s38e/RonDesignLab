@@ -45,10 +45,12 @@ const Home = () => {
     // ----------- Open Say Hallo Form ----------- //
     const closeBtn = document.querySelector(".header_btn__Jtgac");
     const SayHalloPage = document.querySelector(".SayHalloPage");
-    const getFreeEstimate = document.querySelector(".header .right .btn");
+    const getFreeEstimate = document.querySelector(
+      ".headerHomePage .right .btn"
+    );
     const footerLink = document.querySelector("#SayHalloLink");
     const header_link = document.querySelector(
-      ".header .left .link:last-child"
+      ".headerHomePage .left .link:last-child"
     );
     const menuLink_1 = document.querySelector(
       ".menu .container .btns .btn:nth-child(1)"

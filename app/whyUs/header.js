@@ -12,7 +12,7 @@ function HeaderWhyUs() {
   };
   return (
     <>
-      <header className="header">
+      <header className="headerWhyUsPage">
         <div className="left">
           <Link href="/" className="logo">
             <svg

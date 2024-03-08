@@ -11,7 +11,7 @@ function HeaderCases() {
   };
   return (
     <>
-      <header className="header">
+      <header className="headerCasesPage">
         <div className="left">
           <Link href="/" className="logo">
             <svg
