@@ -136,6 +136,7 @@
 }
 /* =============== menu =============== */
 .menu {
+  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   height: 100%;
@@ -151,6 +152,7 @@
 }
 .menu.active {
   transition-delay: 0s;
+  visibility: visible;
   transform: translateX(0);
 }
 .menu .container {

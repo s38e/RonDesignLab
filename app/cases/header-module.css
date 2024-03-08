@@ -135,6 +135,7 @@
 }
 /* =============== menu =============== */
 .menu {
+  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   height: 100%;
@@ -149,6 +150,7 @@
   transition-delay: 1.8s;
 }
 .menu.active {
+  visibility: visible;
   transition-delay: 0s;
   transform: translateX(0);
 }
