@@ -3,8 +3,16 @@ import "./header-module.css";
 import Link from "next/link";
 
 const HeaderPilot = () => {
-  // -------------- Open Menu and Height Menu -------------- //
   const [menuActive, setMenuActive] = useState(false);
+  const [showMenu, setShowMenu] = useState(false); // حالة لتحديد عرض القائمة
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMenu(true); // عرض القائمة بعد ثانية واحدة
+    }, 1000);
+
+    return () => clearTimeout(timer); // تنظيف التايمر عندما يتم تفريغ المكون
+  }, []); // فارغ لتشغيل الأثر مرة واحدة بعد التحميل
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -69,7 +77,10 @@ const HeaderPilot = () => {
           </button>
         </div>
       </header>
-      <div className={`menu ${menuActive ? "active" : ""}`}>
+      <div
+        className={`menu ${menuActive ? "active" : ""}`}
+        style={{ display: showMenu ? "block" : "none" }}
+      >
         <div className="container">
           <div className="links">
             <Link href="/" className="link">

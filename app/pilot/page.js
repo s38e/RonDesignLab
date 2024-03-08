@@ -22,8 +22,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 import Footer from "@/app/components/footer";
-import HeaderPilot from "./header";
 import SayHallo from "../sayHallo/page";
+import HeaderPilot from "./header";
 const { useEffect } = require("react");
 
 gsap.registerPlugin(ScrollTrigger);

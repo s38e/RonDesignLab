@@ -2,10 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./header-module.css";
 import Link from "next/link";
 
-function HeaderWhyUs() {
-  // -------------- Open Menu and Height Header -------------- //
-
+const HeaderWhyUs = () => {
   const [menuActive, setMenuActive] = useState(false);
+  const [showMenu, setShowMenu] = useState(false); // حالة لتحديد عرض القائمة
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMenu(true); // عرض القائمة بعد ثانية واحدة
+    }, 1000);
+
+    return () => clearTimeout(timer); // تنظيف التايمر عندما يتم تفريغ المكون
+  }, []); // فارغ لتشغيل الأثر مرة واحدة بعد التحميل
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -70,7 +77,10 @@ function HeaderWhyUs() {
           </button>
         </div>
       </header>
-      <div className={`menu ${menuActive ? "active" : ""}`}>
+      <div
+        className={`menu ${menuActive ? "active" : ""}`}
+        style={{ display: showMenu ? "block" : "none" }}
+      >
         <div className="container">
           <div className="links">
             <Link href="/" className="link">
@@ -104,6 +114,6 @@ function HeaderWhyUs() {
       </div>
     </>
   );
-}
+};
 
 export default HeaderWhyUs;
