@@ -1099,11 +1099,11 @@ function WhyUs() {
             href="/pilot"
           >
             To persuade <br class="mobile-br" /> even the <br /> most skeptical,
-            <span class="weve">we've</span>
+            <span class="weve">we&apos;ve</span>
             <div class="talk__title">
               <div class="desktop">
                 <div class="talk__motion">
-                  <span class="weve">we've</span>designed
+                  <span class="weve">we&apos;ve</span>designed
                   <div class="talk__image">
                     <div>
                       <Image

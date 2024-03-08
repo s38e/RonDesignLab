@@ -279,29 +279,25 @@ const Footer = () => {
             className={styles.link}
             href="https://www.tiktok.com/@rondesignlab"
           >
-            <Image className={styles.img} src={Tiktok} aria-live="TikTok" />
+            <Image className={styles.img} src={Tiktok} alt="TikTok" />
           </Link>
           <Link
             className={styles.link}
             href="https://www.instagram.com/rondesignlab/"
           >
-            <Image
-              className={styles.img}
-              src={Instagram}
-              aria-live="Instagram"
-            />
+            <Image className={styles.img} src={Instagram} alt="Instagram" />
           </Link>
           <Link
             className={styles.link}
             href="https://dribbble.com/RonDesignLab"
           >
-            <Image className={styles.img} src={Dribbble} aria-live="Dribbble" />
+            <Image className={styles.img} src={Dribbble} alt="Dribbble" />
           </Link>
           <Link
             className={styles.link}
             href="https://www.behance.net/rondesignlab"
           >
-            <Image className={styles.img} src={Behance} aria-live="Behance" />
+            <Image className={styles.img} src={Behance} alt="Behance" />
           </Link>
         </div>
       </section>
