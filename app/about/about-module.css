@@ -1337,10 +1337,13 @@
 }
 /* =============== 540px =============== */
 @media (max-width: 540px) {
+  .section_8 .office__wrapper .office__label {
+    right: auto;
+  }
   .section_8 .office__wrapper .office__label .office__content {
     display: flex;
     flex-direction: column;
-    width: min-content;
+    /* width: min-content; */
     text-wrap: nowrap;
   }
 }
