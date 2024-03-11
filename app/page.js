@@ -209,18 +209,19 @@ const Home = () => {
       {
         x: -200,
         z: 0,
-        rotation: -10,
+        // rotation: -10,
       },
       {
         x: 0,
-        rotation: 0,
+        // rotation: 0,
         duration: 1,
         scrollTrigger: {
           trigger: ".page_body_section_4__esBBh",
-          start: "top 80%",
-          end: "bottom 80%",
+          start: "top 100%",
+          end: "bottom 100%",
           toggleActions: "play none none none",
           scrub: 1,
+          // markers: true,
         },
       }
     );
@@ -230,11 +231,11 @@ const Home = () => {
       {
         x: 200,
         z: 0,
-        rotation: 10,
+        // rotation: 10,
       },
       {
         x: 0,
-        rotation: 0,
+        // rotation: 0,
         duration: 1,
         scrollTrigger: {
           trigger: ".page_body_section_4__esBBh",
