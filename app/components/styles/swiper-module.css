@@ -18,6 +18,8 @@
 .swiper-slide .link .image {
   position: relative;
   aspect-ratio: 1.3523/1;
+  border-radius: clamp(1.875rem, 1.5564320388rem + 1.4563106796vw, 3.75rem);
+  overflow: hidden;
 }
 .swiper-slide .link .image .img {
   position: absolute;
@@ -139,4 +141,12 @@
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 30px;
+}
+/* ====================== Responsive Design ====================== */
+/* ====================== 660px ====================== */
+@media (max-width: 660px) {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 20px;
+  }
 }

@@ -246,7 +246,7 @@ const About = () => {
     gsap.fromTo(
       ".section_2 .home__body .home__list .home__item:nth-child(1)",
       {
-        x: "-50%",
+        x: "-30%",
         z: 0,
       },
       {
@@ -265,7 +265,7 @@ const About = () => {
     gsap.fromTo(
       ".section_2 .home__body .home__list .home__item:nth-child(2)",
       {
-        x: "50%",
+        x: "30%",
         z: 0,
       },
       {
